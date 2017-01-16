@@ -74,7 +74,7 @@
 % Current Collaborators:
 % 1. Pranav
 % 2. Nick
-% 3.
+% 3. Andrew
 % 4.
 %==============================================================================
 \begin{document}
@@ -195,7 +195,7 @@ a commutative ring with 1.
     \end{itemize}
 \end{defn}
 \begin{defn}
-    Let $R$ be a ring. A subset $S \subset R$ is called a subring if
+    Let $R$ be a ring. A subset $S \subset R$ is called a \textbf{subring} if
     \begin{itemize}
         \item $S$ is a subgroup of $(R, +, 0)$
         \item $a \cdot b \in S$ for all $a, b \in S$.
@@ -750,4 +750,83 @@ Given $0\ne P\in R[T],$ define deg$(P)=\min\{n|a_m=0\forall m>n\}$, deg$(0)=-\in
 2) deg$(P\cdot Q)\leq$ deg$(P)+$deg$(Q)$ with equality if the leading coefficient of $P$ (or $Q$) is not a 0 divisor.
 3) In particular, if $R$ is a domain, so is $R[T].$ The proof is left as an exercise to the reader.
 \end{fact}
+
+\section{January 13, 2017} % Andrew
+
+\begin{rmk}
+Any $P \in R[T]$ gives a function $R \rightarrow R$ by $r \mapsto P(r) = a_nr^n + ... + a_0$.  However, $P$ is not necessarily determined by this function.  For example, let $R = \ZZ / p\ZZ$ where $p$ is a prime and $P(T) = T^p - T$.  Since $x^p = x$ for all $x \in R$, $P$ and $0$ give the same function.  However, $P \neq 0$.
+\end{rmk}
+
+\begin{ex}
+
+\item $P = T^2 + 3T - 2$, $Q = -T^2 + 3T - 7$ gives $P+Q = 6T - 9$ ($\text{deg}(P+Q) < \max(\text{deg}(P),\text{deg}(Q))$)
+
+\item $R = \ZZ/4\ZZ$, $P = 2T^2+1$, $Q = 2T^3+3T$ gives $PQ = 3T$ ($\text{deg}(PQ) < \text{deg}(P)+\text{deg}(Q)$)
+
+\end{ex}
+
+\begin{fact}
+Let $\phi : R \rightarrow S$ be a morphism and let $s \in S$.  There exists a unique morphism $\phi_s : R[T] \rightarrow S$ such that $\phi_s(r) = \phi(r)$ for all $r \in R$ and $\phi_s(T) = s$.
+\end{fact}
+
+\begin{proof}
+If $\phi_s$ is any such morphism then $\phi_s(a_nT^n + ... + a_0)$ must equal $\phi(a_n)s^n + ... + \phi(a_0)$.  This proves uniqueness and existence (upon checking that this is a morphism).
+\end{proof}
+
+\begin{ex} \hspace{0.5cm}
+
+\begin{itemize}
+
+\item If $\phi = id : R \rightarrow R$ then we get evaluation morphism $R[T] \rightarrow R$ given by $P \mapsto P(s)$.
+
+\item Let $I \subseteq R$ be an ideal and let $\phi : R \rightarrow R/I \xhookrightarrow{} R/I[T]$ and let $s = T$.  We get ``reduction mod $I$" morphism $R[T]\rightarrow R/I[T]$.
+
+\end{itemize}
+
+\end{ex}
+
+\begin{rmk} (def. 1.5)
+$a \in R$ is \textbf{nilpotent} if $a^n = 0$ for some $n \in \NN$
+\end{rmk}
+
+\begin{prop}
+Let $P = a_nT^n + ... + a_0 \in R[T]$.  We have $P \in R[T]^\times$ iff $a_0 \in R^\times$ and $a_1,...,a_n$ are nilpotent.
+\end{prop}
+
+\begin{proof} \hspace{0.5cm}
+
+Assume that $R$ is a domain.  We have that $P$ is a unit iff there exists $Q \in R[T]$ such that $PQ = 1$.  By 1-11 Fact 6, $0 = deg(1) = deg(PQ) = deg(P) + deg(Q)$ ($R$ is a domain so the leading coefficient of $P$ (alternatively $Q$) is not a zero divisor).  Thus $deg(P),deg(Q) = 0$.  Thus $a_1,...,a_n = 0$ are nilpotent and $a_0 \in R^\times$.
+
+Let $R$ be a general ring.  Let $\mathcal{P} \subseteq R$ be a prime ideal.  Since $P$ is a unit in $R[T]$, the image of $P$ in $R / \mathcal{P}[T]$ is a unit.  Since $R/\mathcal{P}$ is a domain by 1-6 thm. 8, by the above argument $a_1,...,a_n = 0_{R/\mathcal{P}}$ and thus $a_1,...,a_n \in \mathcal{P}$.  Since this holds for all $\mathcal{P}$, by HW we have that $a_1,...,a_n$ are nilpotent.
+
+\end{proof}
+
+\begin{lemma}
+Let $P \in R[T]$ and $r \in R$.  We have $P(r) = 0$ iff $(T-r) \mid P$.
+\end{lemma}
+
+\begin{proof}
+
+The backward direction is clear.  Apply fact 1 with $S = R[T]$, $\phi : R \xhookrightarrow{} R[T]$, $s = T+r$ to get a morphism $R[T] \rightarrow R[T]$.  This is an isomorphism with inverse given by the same construction with $s = T-r$.  Under this isomorphism, $P \mapsto Q$ with $Q(0) = 0$.  Thus $Q(T) = b_nT^n + ... + b_1T$ so $T \mid Q$.  Taking the preimage under the above isomorphism, we have $(T-r) \mid P$.
+
+Gitlin's thoughts:  The constructed isomorphism can be thought of as the map $R[T] \rightarrow R[T]$ which ``replaces every $T$ with $T+r$."  Thus $Q(x) = P(x+r)$ for all $x \in R$.  In particular, $Q(0) = P(r)$ which is $0$.  The inverse map is the map $R[T] \rightarrow R[T]$ which ``replaces every $T$ with $T-r$."  In particular, the preimage of $Q(T) = b_nT^n + ... + b_1T$ is $b_n(T-r)^n + ... + b_1(T-r)$.
+
+\end{proof}
+
+\begin{prop}
+Let $P,D \in R[T]$.  Assume that $D \neq 0$ and that the leading coefficient of $D$ is a unit.  There exist unique $Q,Z \in R[T]$ with $deg(Z) < deg(D)$ such that $P = QD+Z$.
+\end{prop}
+
+\begin{proof}\hspace{0.5cm}
+
+Choose $Q$ so that $deg(Z)$ is minimal where $Z = P-QD$.  We claim $deg(Z) < deg(D)$.  Suppose not.  Let $D = d_nT^n + ... + d_0$ and $Z = z_mT^m + ... + z_0$ with $m \geq n$.  Note that $P-(Q+z_md_n^{-1}T^{m-n})D = Z - (z_md_n^{-1}T^{m-n})D$ has degree less than $deg(Z)$, contradicting the minimality of $Z$.  This shows existence.
+
+Gitlin's thoughts:  The set of ``candidates" is the set of elements of $R[T]$ that have the form $P-*D$ where $*$ varies over $R[T]$.  Clearly $P-(Q+z_md_n^{-1}T^{m-n})D$ is a candidate.  Furthermore, the leading term $z_mT^m$ of $Z$ cancels with the leading term $z_md_n^{-1}T^{m-n} \cdot d_nT^n = z_mT^m$ of $(z_md_n^{-1}T^{m-n})D$ in the subtraction $Z - (z_md_n^{-1}T^{m-n})D$ so the degree of $Z$ is at least one more than the degree of $Z - (z_md_n^{-1}T^{m-n})D$.
+
+Let $Q',Z'$ be another such pair.  We have $QD+Z = P = Q'D+Z'$ so $(Q-Q')D = Z'-Z$.  Thus (1-11 fact 6) $deg(D) > \max(deg(Z'),deg(Z)) \geq deg(Z'-Z) = deg((Q-Q')D) = deg(Q-Q') + deg(D)$ (the leading coefficient of $D$ is a unit and thus not a divisor of zero).  This means $deg(Q-Q') = - \infty$ so $Q-Q' = 0$ so $Q= Q'$.  Thus $Z = P-QD = P-Q'D = Z'$.  This shows uniqueness.
+
+Gitlin's thoughts:  My uniqueness proof likely differs from the one given in class.  Sorry Tasho.  I couldn't follow your inequalities.
+
+\end{proof}
+
 \end{document}
