@@ -77,7 +77,7 @@
 % 2. Nick
 % 3. Andrew
 % 4. Ben
-% 5. 
+% 5.
 %==============================================================================
 \begin{document}
 \title{Math 494: Honors Algebra II}
@@ -608,19 +608,18 @@ operations
     we know that $R = (I_1 \cdot I_{n-1}) + I_n$. This implies thus that the ideals
     $(I_1 \cdots I_{n-1})$ and $I_n$ are coprime. Thus, applying the $n = 2$ case on these
     2 ideals, we have that $(I_1 \cdots I_{n-1}) \cap I_n \subset (I_1 \cdots I_{n-1}) \cdot I_n$,
-    thereby proving the desired result. 
+    thereby proving the desired result.
 \end{proof}
 
 \section{January 11, 2017}
-\rmk .
-
+\begin{rmk}
 \begin{itemize}
         \item Any field is a domain.
         \item Any subring of a domain is a domain.
         \item Any subring of a field is a domain.
     \end{itemize}
-
 Is the opposite true?
+\end{rmk}
 \begin{thm}
 Let $R$ be a domain.
 
@@ -632,7 +631,7 @@ Let $R$ be a domain.
 K \arrow{rr}{l} && L
 \end{tikzcd}
 
-2) If $(i',K')$ is another pair as in 1) there exists a unique isomorphism $\phi:K\rightarrow K'$ such that 
+2) If $(i',K')$ is another pair as in 1) there exists a unique isomorphism $\phi:K\rightarrow K'$ such that
 
 \begin{tikzcd}[,every arrow/.append style={maps to}
 ,every label/.append style={font=\normalsize},column sep=1.5em]
@@ -642,7 +641,7 @@ K \arrow{rr}{\phi} && K'
 
 \end{thm}
 
-\rmk.
+\begin{rmk}
 
 \begin{itemize}
 	\item $(i,K)$ is an example of a ``universal object"
@@ -650,6 +649,7 @@ K \arrow{rr}{\phi} && K'
 	\item $K$ is produced from $R,$ just like the rationals are produced from the integers.
 \end{itemize}
 
+\end{rmk}
 \begin{proof}
 
 2) Given two universal objects $(i,K),(i',K'),$ apply 1) with $(i,K)$ as the universal object, and $(i',K')$ as a test object to get $l:K\rightarrow K'$. Do it the other way to get $l':K'\longrightarrow K.$
@@ -682,9 +682,9 @@ When $(i,k)$ is both a universal object and a test object, we get $l\circ l=\tex
 
 \begin{claim}
 
-$\sim$ is an equivalence relation. 
+$\sim$ is an equivalence relation.
 
-\begin{proof} 
+\begin{proof}
 
 Reflexive: $(n,d)\sim(n,d)\iff nd=nd.$
 
@@ -707,7 +707,7 @@ $$0=[0,1],1=[1,1]$$
 
 $$i:R\rightarrow K, i(r)=[r,1].$$
 
-We leave as homework the verifications that $+,\cdot$ are well defined, that $K$ is a field, and that $i$ is a morphism. Injectivity is obvious. Given $(j,L)$, define $l:K\longrightarrow L$ by 
+We leave as homework the verifications that $+,\cdot$ are well defined, that $K$ is a field, and that $i$ is a morphism. Injectivity is obvious. Given $(j,L)$, define $l:K\longrightarrow L$ by
 
 $$l([n,d])=l(i(n))\cdot l(i(d)^{-1})=j(n)j(d)^{-1}.$$
 
@@ -729,14 +729,14 @@ A pair $(i,K)$ is called a (the) field of fractions (fraction field) of $R$.
 
 $$(P+Q)(T)=(a_n+b_n)T^n+\ldots+(a_0+b_0)$$
 
-$$(P\cdot Q)(T)=(c_mT^m+c_{m-1}T^{m-1}+\ldots+c_0$$ where 
+$$(P\cdot Q)(T)=(c_mT^m+c_{m-1}T^{m-1}+\ldots+c_0$$ where
 
 $$c_k=\sum_{i+j=k}a_i\cdot b_j.$$
 
 3) Given $r\in R$ we have the constant polynomial
 $r:(a_nT^n+\ldots+a_0,a_0=r,a_i=0\text{ for } i>0).$ In particular, we have $0,1$ as constant polynomials.
 
-4) Let $R[T]$ be the set of al polynomial in $T$ over $R$. 
+4) Let $R[T]$ be the set of al polynomial in $T$ over $R$.
 
 \begin{fact} $(R[T],+,\cdot,0,1)$ is a ring. Moreover $R\rightarrow R[T]$, $r\rightarrow$ constant polynomial $r$ is an injective morphism. The proof is left as an exercise to the reader.
 \end{fact}
@@ -747,7 +747,7 @@ $r:(a_nT^n+\ldots+a_0,a_0=r,a_i=0\text{ for } i>0).$ In particular, we have $0,1
 
 Given $0\ne P\in R[T],$ define deg$(P)=\min\{n|a_m=0\forall m>n\}$, deg$(0)=-\infty$.
 \end{defn}
-\begin{fact}
+\begin{fact}\label{polyringdomain}
 1) deg$(P+Q)\leq\max(\text{deg}(P),\text{deg}(Q))$ with equality if deg$(P)\ne$ deg$(Q)$.
 2) deg$(P\cdot Q)\leq$ deg$(P)+$deg$(Q)$ with equality if the leading coefficient of $P$ (or $Q$) is not a 0 divisor.
 3) In particular, if $R$ is a domain, so is $R[T].$ The proof is left as an exercise to the reader.
@@ -843,12 +843,12 @@ Gitlin's thoughts:  My uniqueness proof likely differs from the one given in cla
 \begin{proof}
 This proof rehashes the one given in class by Tasho to rectify any mistakes or lack of clarity in the one given on Jan. 13 (no offense Gitlin). Following the proof given on Jan. 13 (before the proof of uniqueness), we have the following string of inequalities:
 \[deg(D) > deg(Z) \geq deg(Z - Z') = deg(D) + deg(Q - Q').\]
-This implies that $deg(Q - Q') = -\infty = deg(Z - Z')$, so $Q - Q' = Z - Z' = 0$, i.e. $Q = Q'$ and $Z = Z'$, completing the proof. 
+This implies that $deg(Q - Q') = -\infty = deg(Z - Z')$, so $Q - Q' = Z - Z' = 0$, i.e. $Q = Q'$ and $Z = Z'$, completing the proof.
 \end{proof}
 
 The following is a proof Tasho gave of Lemma 3 from Jan. 13 which utilizes Proposition 4 from Jan. 13.
 \begin{proof}
-As per Proposition 4, write $P(T) = (T - r) \cdot Q(T) + Z(T)$ with $deg(Z) < deg(T - r) = 1 \Rightarrow Z \in R$. We have then $P(r) = (r - r) \cdot Q(r) + Z(r) = Z$, but since $P(r) = 0$ we have now $Z = 0 \Leftrightarrow (T - r) \mid P$. 
+As per Proposition 4, write $P(T) = (T - r) \cdot Q(T) + Z(T)$ with $deg(Z) < deg(T - r) = 1 \Rightarrow Z \in R$. We have then $P(r) = (r - r) \cdot Q(r) + Z(r) = Z$, but since $P(r) = 0$ we have now $Z = 0 \Leftrightarrow (T - r) \mid P$.
 \end{proof}
 
 \begin{defn}
@@ -859,7 +859,7 @@ Let $P \in R[T], r \in R$. Define \textbf{the multiplicity of $r$ in $P$} by $\m
 Let $R$ be a domain. Then $0 \neq P \in R[T]$ has at most $deg(P)$-many zeroes, counted with multiplicity.
 \end{cor}
 \begin{proof}
-We induct on $deg(P)$. As a base case take $deg(P) = 0$: $P \in R$ has no zeroes, as required. For an inductive step assume that the statement holds for all polynomials of degree less than $deg(P)$. If $P$ has no zeroes, we are done. Otherwise let $r \in R$ be a zero of $P$. By Lemma 3 from Jan. 13, $P = (T - r) \cdot Q(T)$ for some $Q \in R[T]$ with $deg(Q) < deg(P)$. By inductive hypothesis $Q$ has at most $deg(Q) = deg(P) - 1$ zeroes. Since $R$ is a domain, a zero of $P$ is either $r$ or a zero of $Q$, so $P$ has at most $deg(Q) + 1 = deg(P)$ zeroes, as required. This completes the inductive step, and thus the proof. 
+We induct on $deg(P)$. As a base case take $deg(P) = 0$: $P \in R$ has no zeroes, as required. For an inductive step assume that the statement holds for all polynomials of degree less than $deg(P)$. If $P$ has no zeroes, we are done. Otherwise let $r \in R$ be a zero of $P$. By Lemma 3 from Jan. 13, $P = (T - r) \cdot Q(T)$ for some $Q \in R[T]$ with $deg(Q) < deg(P)$. By inductive hypothesis $Q$ has at most $deg(Q) = deg(P) - 1$ zeroes. Since $R$ is a domain, a zero of $P$ is either $r$ or a zero of $Q$, so $P$ has at most $deg(Q) + 1 = deg(P)$ zeroes, as required. This completes the inductive step, and thus the proof.
 \end{proof}
 The following example answers the question ``does this fail when $R$ is not a domain?":
 \begin{ex}
@@ -871,7 +871,7 @@ A field $k$ is called \textbf{algebraically closed} provided that every nonconst
 \end{defn}
 
 \begin{prop}
-Let $k$ be an algebraically closed field, $P \in k[T]$. Then 
+Let $k$ be an algebraically closed field, $P \in k[T]$. Then
 \[P(T) = c \cdot (T - r_1)^{m_1} \cdots (T - r_n)^{m_n}\]
 for $c, r_1, ..., r_n \in k, m_1, ..., m_n \in \NN$.
 \end{prop}
@@ -891,13 +891,13 @@ Recall: $P \in R[T] \leftrightarrow$ an eventually-zero sequence $(a_0, a_1, ...
 Given a ring morphism $\phi \colon R \rightarrow S, s_1, ..., s_n \in S$, there exists a unique ring morphism \[\phi_{s_1, ..., s_n} \colon R[T_1, ..., T_n] \rightarrow S\] such that $\phi_{s_1, ..., s_n}(r) = \phi(r)$ for $r \in R$, and $\phi_{s_1, ..., s_n}(T_i) = s_i$.
 \end{fact}
 \begin{proof}
-We induct on $n$. As a base case let $s \in S$. Fact 5.1, Jan. 13 above guarantees the existence of a unique morphism $\phi_s \colon R[T] \rightarrow S$ with the given properties. For an inductive case assume the statement holds for $n - 1$. By inductive hypothesis we have a unique morphism $\phi_{s_1, ..., s_{n-1}} \colon R[T] \rightarrow S$ satisfying the given properties. Applying the base case to $\phi_{s_1, ..., s_{n-1}}$ with $s = s_n$ gives the desired (unique) morphism, completing the inductive step and thus the proof. 
+We induct on $n$. As a base case let $s \in S$. Fact 5.1, Jan. 13 above guarantees the existence of a unique morphism $\phi_s \colon R[T] \rightarrow S$ with the given properties. For an inductive case assume the statement holds for $n - 1$. By inductive hypothesis we have a unique morphism $\phi_{s_1, ..., s_{n-1}} \colon R[T] \rightarrow S$ satisfying the given properties. Applying the base case to $\phi_{s_1, ..., s_{n-1}}$ with $s = s_n$ gives the desired (unique) morphism, completing the inductive step and thus the proof.
 \end{proof}
 
 \begin{defn} \hspace{0.5cm}
 \begin{itemize}
 \item The image of $\phi_{s_1, ..., s_n}$ is called the \textbf{$R$-subalgebra of $S$ generated by $s_1, ..., s_n$}
-\item $s_1, ..., s_n$ are called \textbf{algebraically independent} provided that $\phi_{s_1, ..., s_n}$ is injective. 
+\item $s_1, ..., s_n$ are called \textbf{algebraically independent} provided that $\phi_{s_1, ..., s_n}$ is injective.
 \end{itemize}
 \end{defn}
 
@@ -906,7 +906,7 @@ To gain some intuition about algebraic independence, consider the algebraic rela
 Taking preimages under $\phi_{s_1, ..., s_n}$ we have
 \begin{align*}
 \phi_{s_1, ..., s_n}^{-1}(r_1s_1^{m_{1,1}} \cdots + s_n^{m_{1, n}} + \cdots + r_ns_1^{m_{n, 1}} \cdots s_n^{m_{n, n}}) &\in \phi_{s_1, ..., s_n}^{-1}(0) = \ker(\phi_{s_1, ..., s_n}) \\
-\Rightarrow \phi^{-1}(r_1)T_1^{m_{1,1}} \cdots T_n^{m_{1,n}} + \cdots + \phi^{-1}(r_n)T_1^{m_{n,1}} \cdots T_n^{m_{n,n}} &\in \ker(\phi_{s_1, ..., s_n}) 
+\Rightarrow \phi^{-1}(r_1)T_1^{m_{1,1}} \cdots T_n^{m_{1,n}} + \cdots + \phi^{-1}(r_n)T_1^{m_{n,1}} \cdots T_n^{m_{n,n}} &\in \ker(\phi_{s_1, ..., s_n})
 \end{align*}
 thus if there exists such a relation that is nontrivial, there is a nonzero element in $\ker(\phi_{s_1, ..., s_n})$, so it is not injective. (Note from Ben: this seems to assume that the coefficients $r_i$ are in the image of $\phi$, which is not generally true. Will bring up with Tasho and edit as necessary.)
 
@@ -943,4 +943,127 @@ Let $R$ be a domain. \hspace{0.5cm}
 \item Such an $R$ is called a \textbf{unique factorization domain}, or UFD.
 \end{enumerate}
 \end{defn}
+\section{January 20, 2017}
+\begin{prop}
+    Let $R$ be a domain with factorization. Then $R$ has unique factorization if and
+    only if every irreducible element is prime.
+\end{prop}
+\begin{proof}
+    Say $R$ has unique factorization. Let $p$ be irreducible. We will show that
+    $p$ is prime. Let $a,b \in R$ be such that $p \mid ab$. Using factorization,
+    we write that $a = \zeta u_1u_2 \cdots u_k$, $b = \mu v_1\cdots v_l$, and that
+    $\frac{ab}{p} = \alpha w_1w_2 \cdots w_m$. \\
+    From the fact that $\frac{ab}{p}\cdot p = ab$, we have that $\alpha p w_1w_2\cdots w_m = \zeta\mu u_1\cdots u_kv_1 \cdots v_l$.
+    By uniqueness of factorization, we have that these expressions are permutations
+    upto multiplication by units, so we have that $p \sim u_i$ or $p \sim v_j$. In
+    the first case, we have that $p \mid a$ and in the second, we have that $p \mid b$. \\
+    Assume now that every irreducible is prime. We will show uniqueness by induction
+    on the length of the factorization. \\
+    Length = 0: Then, $a$ is a unit, so $a$ is not divisible by any irreducible. \\
+    Assume now that the statement holds for a length $k$ factorization.
+    Assume now that we have
+    $$
+    a = \zeta u_1 \cdots u_{k+1} = \mu v_1 \cdots v_l
+    $$
+    Now $u_{k+1}$ divides $v_1 \cdots v_l$. But since $u_{k+1}$ is prime, $u_{k+1} \mid v_j$
+    for some $1 \leq j \leq l$. Reordering the factors, we have that
+    $u_{k+1} \mid v_l$. Since $v_l$ is irreducible, this thus implies that if $u_{k+1}x = v_l$,
+    $x$ must be a unit, and thus $v_l \sim u_{k+1}$. Furthermore, we can write that
+    $\zeta u_1 \cdots u_k = \mu \left(\frac{v_l}{u_{k+1}}\right) v_1 \cdots v_{l-1}$. Applying
+    the inductive hypothesis, we have $l -1 = k$ and the the first $k$ terms
+    are simply a permutation of each other, while the last is simply a unit scaling
+    away from the other. Thus, these are the same factorization.
+\end{proof}
+\begin{defn}
+    A ring is called \textbf{principal}, if every ideal is principal. If,
+    in addition, the ring is a domain, it is a \textbf{Prinicipal Ideal Domain}, or
+    \textbf{PID}.
+\end{defn}
+\begin{ex}
+    $\ZZ$ is a PID. $\Zn n$ are principal, any field is a PID. Quotients and products
+    of principal rings are principals.
+\end{ex}
+\begin{thm}
+    Every PID is a UFD
+\end{thm}
+\begin{proof}
+    Let $R$ be a PID. We first show the existence of factorization. Say that
+    $a \in R$, $a \neq 0$, $a \in R^\times$, and has no factorization. Then,
+    $a$ is not irreducible, (as otherwise, it itself is a factorization). So,
+    we can right that $a = a_0 = a_1b_1$. However, note that one of these must
+    not have a factorization, as otherwise the product of their factorizations
+    is a factorization of $R$. So, WoLOG assume that $a_1$ does not have a factorization.
+    Again, $a_1$ is not irreducible, and we write $a_1 = a_2b_2$. Recursively
+    applying this argument, we have that $a_0 = a_1a_2a_3 \dots$ an infinite sequence with
+    $a_i \neq 0$, $a_i \notin R^\times$ and $a_i \not\sim a_{i+1}$, and $a_{i+1} \mid a_{i}$
+    In terms of the ideals, we have that
+    $$
+    (a_0) \subsetneq (a_1) \subsetneq \dots
+    $$
+    Now, we consider $I = \bigcup\limits_{i=0}^{\infty}{(a_i)}$. Since we have a
+    nested sequence of ideals, we have that $I$ itself is an ideal. We have that $R$
+    is a principal ideal, which means that $I = (c)$ for some $c \in R$. This means
+    though that $c \in I$, which means that $c \in (a_k)$ for some $k \in \NN$.
+    However, this means that for any $n \geq k$, we have that $(c) \subset (a_k) \subset I = (c)$,
+    meaning that each $(a_n) = (c)$. However, we assumed proper inclusion above,
+    and this is thus a contradiction. Thus, we have factorization. \\
+    Next, we verify uniqueness. We can show this by showing that every irreducible is
+    prime. Let $u$ be an irreducible. We want to show it is prime, so assume that $u \mid ab$.
+    Assume that $u \nmid a$. We will show that $u \mid b$. Since we have that $u \nmid a$,
+    we have that $u \notin (a)$, so we have that $(a) \subsetneq (a, u)$. Since
+    $R$ is principal, we have that $(u, a) = (d)$. Since $u \in (d)$ we have that $d \mid u$.
+    However, since $u$ is irreducible, $d$ must be a unit, or $d \sim u$. We know because
+    $(u) \subsetneq (u,a)$, we have that $d \sim u$ is impossible. Thus, assume that
+    $d$ is a unit. This means though that $(u,a)  = R$. This means that we have $1 \in R$,
+    so $1 = \alpha u + \beta a$ (this is what it means to be in $(u,a)$). Scaling
+    this equality by $b$, we have that $b = b\alpha u + \beta (ab)$. Now, since $u \mid ab$
+    and $u \mid u$, $u \mid b$, as desired.
+\end{proof}
+\begin{defn}
+    A \textbf{Euclidean Domain} is a pair $(R, H)$, where $R$ is a domain, and
+    $H: R \setminus \{0\} \rightarrow \NN$ is a function such that
+    \begin{enumerate}
+        \item $H(ab) \geq H(a)$
+        \item Given $X,d \in R$ with $d \neq 0$, there are $q, r \in R$ such that
+        \begin{enumerate}
+            \item $X = qd + r$
+            \item either $r = 0$ or $H(r) < H(d)$
+        \end{enumerate}
+    \end{enumerate}
+\end{defn}
+\begin{ex}
+    If $F$ is a field, then $(F[T], deg)$ is a Euclidean domain.
+\end{ex}
+\begin{prop}
+    Every Euclidean domain is a PID.
+\end{prop}
+\begin{proof}
+    Let $I \subset R$ be an ideal. WoLOG, $I \neq \{0\}$. Choose $d \in I$ such
+    that $H(d)$ is minimal. To show that $I = (d)$, let $a \in I$ and take $q,r \in R$
+    such that $a = qd + r$. Then, $r = a - qd \in I$. If $r \neq 0$, we have that $H(r) < H(d)$,
+    contradicting the minimality of $d$. Thus $r = 0$, and $a = qd$. Thus,
+    every ideal is of the form $(d)$, showing it is principal.
+\end{proof}
+\begin{cor}
+    If $F$ is a field, $F[T]$ is a PID, and hence a UFD.
+\end{cor}
+\begin{defn}
+    Let $R$ be a UFD. We call $0 \neq P \in R[T]$ \textbf{primitive} if $a \in R$
+    with $a \mid P$ means that $a \in R^\times$.
+\end{defn}
+\begin{rmk}
+    This is equivalent to no irreducible $p \in R$ divides all the coefficients of
+    $P$. Intuitively, we can say the ``gcd'' of the coefficients of $P$ is 1.
+\end{rmk}
+\begin{lemma}
+    \textbf{(Gauss)} If $P,Q$ are primitive, so is $PQ$.
+\end{lemma}
+\begin{proof}
+    Let $P \neq 0$, $Q \neq 0$ such that $PQ$ is not primitive. Let $p \in R$ prime
+    such that $p \mid PQ$. Thus, $PQ$ becomes $0$ under the
+    $R[T] \rightarrow (R/(p))[T]$. \\
+    But $R / (p)$ is a domain by \ref{thm:ideals}, and thus, by \ref{polyringdomain}, we have
+    that $(R/(p))[T]$ is also a domain. Thus, we have that either $P$ or $Q$ is
+    0 in $(R / (p))[T]$, meaning it is also divisible $p$, as desired.
+\end{proof}
 \end{document}
