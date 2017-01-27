@@ -1,0 +1,159 @@
+\section{January 4, 2017} %Pranav
+\noindent \textbf{Rings}
+\begin{defn} \hspace{0.5cm}
+    \begin{enumerate}[a)]
+    \item A \textbf{ring} is a tuple $(R, +, \cdot, 0)$ where:
+    \begin{itemize}
+        \item $R$ is a set
+        \item $0 \in R$
+        \item $+,\cdot: R \times R \rightarrow R$, $\quad$  $(a,b) \mapsto a + b, a \cdot b$
+    \end{itemize}
+    subject to:
+    \begin{itemize}
+        \item $(R, +, 0)$ is an abelian group
+        \item $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
+        \item $(a + b) \cdot c = a \cdot c + b \cdot c$
+        \item $a \cdot (b + c) = a \cdot b + a \cdot c$
+    \end{itemize}
+    \item A \textbf{ring with unity} is a tuple $(R, +, \cdot, 0, 1)$, where
+    $(R,+,\cdot,0)$ is a ring, and $1 \in R$ is subject to $1 \cdot a = a \cdot 1 = a$
+    for all $a \in R$.
+    \item A ring $(R, +, \cdot, 0)$ is called \textbf{commutative} if $ab = ba$ for all
+    $a, b \in R$.
+    \item A \textbf{field} is a commutative ring with unity $(R,+,\cdot,0,1)$ such
+    that $(R \backslash \{0\}, \cdot, 1)$ is a group.
+    \end{enumerate}
+\end{defn}
+\begin{rmk} \hspace{0.5cm}
+    \begin{itemize}
+        \item We don't really need to include 0,1 in notation: they are unique
+        if they exist
+        \item There is a notion of a \textbf{skew field}: ring with unity
+        $(R,+,\cdot,0,1)$ such that $(R \backslash \{0\}, \cdot , 1)$ is a group.
+        (This drops the commutative condition from the definition of a field).
+        \item In French: \textit{corps} is a skew field, and \textit{corps commutatif} is a field.
+    \end{itemize}
+\end{rmk}
+\begin{fact}\label{fact:0prod}
+ Let $R$ be a ring. For all $a \in R$, $0 \cdot a = 0$.
+\end{fact}
+\begin{proof}
+    $(0 \cdot a) = (0 + 0) \cdot a = 0 \cdot a + 0 \cdot a \Rightarrow 0 = 0 \cdot a$
+\end{proof}
+\begin{ex} \hspace{0.5cm}
+    \begin{itemize}
+        \item $\ZZ$ is a ring, commutative, with unity
+        \item $\QQ, \RR, \CC$ are fields
+        \item $\HH = \{a + bi + cj + dk \mid a,b,c,d \in \RR \}$ where $i^2 = j^2 = k^2 = ijk = -1$ are
+        called the \textbf{Hamiltonian Quaternions} and are a skew-field
+        \item $\mathcal{C}_{C}(\RR) = $ functions on $\RR$ with compact
+        support \\
+        ($\supp(f) = \overline{\{x \in \RR \mid f(x) \neq 0\}}$) is a
+        commutative ring without unity
+        \item $R = \{\star\}, 0 = 1 = \star$ is the \textbf{zero ring}.
+    \end{itemize}
+\end{ex}
+\begin{fact}
+    If $(R,+,\cdot,0,1)$ is a ring with unity and $0 = 1$, then $R$ is the zero ring.
+\end{fact}
+\begin{proof}
+    Take $a \in R$. Then $a = a \cdot 1 = a \cdot 0 = 0$ by Fact \ref{fact:0prod}.
+\end{proof}
+\noindent \underline{Convention}: Unless otherwise noted, ring will refer to
+a commutative ring with 1.
+\begin{defn}
+    Let $R$ be a ring. Its \textbf{group of units} is
+    $$
+    R^\times = \{a \in R \mid \exists \, b \in R: ab = 1\}
+    $$
+\end{defn}
+\begin{fact} \hspace{0.5cm}
+    \begin{itemize}
+        \item For $a \in R^\times$, there is a unique $b \in R$ such that $ab = 1$.
+        Write $b = a^{-1}$.
+        \item For $a,b \in R^\times$, $a \cdot b \in R^\times$.
+    \end{itemize}
+\end{fact}
+\begin{proof} \hspace{0.5cm}
+    \begin{itemize}
+        \item Given $b, b^\prime$, we have $b = b \cdot 1 = b(ab^\prime) = (ba)b^\prime = 1 \cdot b^\prime
+         = b^\prime$.
+         \item $(a \cdot b) \cdot (b^{-1} \cdot a^{-1}) = 1$
+    \end{itemize}
+\end{proof}
+\begin{ex}
+    $\RR^\times = \RR \backslash \{0\}$, $\ZZ^\times = \{1, -1\}$
+\end{ex}
+\begin{defn}
+    Let $R, S$ be rings. A \textbf{morphism} $\phi:R \rightarrow S$ is a map of
+    sets $\varphi:R \rightarrow S$ satisfying
+    \begin{itemize}
+        \item $\varphi(a + b) = \varphi(a) + \varphi(b)$
+        \item $\varphi(a \cdot b) = \varphi(a) \cdot \varphi(b)$
+        \item $\varphi(1) = 1$
+    \end{itemize}
+\end{defn}
+\begin{ex}
+    $\varphi:\ZZ \rightarrow \ZZ$ $u \mapsto 0$ is \underline{not} a morphism of
+    rings with 1. (it is a morphism of general rings).
+\end{ex}
+\begin{fact}\label{fact:!morph}
+    For any ring $R$ there is a unique morphism $\varphi:\ZZ \rightarrow R$. Given
+    $z \in \ZZ$, we write $z_{R}$, or simply $z$ for its image under $\varphi$.
+\end{fact}
+\begin{ex}
+    $5 \in \ZZ$, $5_{\QQ} \in \QQ$ usual number $5$. $5_{\Zn 2} = 1_{\Zn 2}$
+\end{ex}
+\begin{defn}
+    Let $R$ be a ring. A subset $I \subset R$ is called an \textbf{ideal} if
+    \begin{itemize}
+        \item $I$ is a subgroup of $(R, +, 0)$
+        \item $a \cdot f \in I$ for all $a \in R, f \in I$.
+    \end{itemize}
+\end{defn}
+\begin{defn}
+    Let $R$ be a ring. A subset $S \subset R$ is called a \textbf{subring} if
+    \begin{itemize}
+        \item $S$ is a subgroup of $(R, +, 0)$
+        \item $a \cdot b \in S$ for all $a, b \in S$.
+        \item $1 \in S$.
+    \end{itemize}
+\end{defn}
+\begin{rmk}\hspace{0.5cm}
+    \begin{itemize}
+        \item The only subset that is both a subring and an ideal is $R$ itself.
+        (reason: if $1 \in I$, then $a \cdot 1 \in I$ for all $a \in R$, meaning $I = R$)
+        \item $I = \{0\}, I = R$ are always ideals.
+        \item In rings without unity, the 2 notions align closer: ideal becomes a special
+        case of subring as $1 \in S$ condition is dropped.
+    \end{itemize}
+\end{rmk}
+\begin{ex} \hspace{0.5cm}
+    \begin{itemize}
+        \item Every subgroup of $(\ZZ, +, 0)$ is an ideal of $\ZZ$.
+        \item If $F$ is a field, then $\{0\}, R$ are the only ideals
+        \item Let $R = \mathcal{C}_C(\RR), S \in R$ subset.
+        $$
+        I = \{f \in \mathcal{C}_C(\RR) \mid f \mid_{S} = 0 \}
+        $$
+        is an ideal
+    \end{itemize}
+\end{ex}
+\begin{defn}
+    An ideal $I \in R$ is called \textbf{principal} if $I = \{a \cdot r \mid r \in R\}$
+    for some $a \in R$. Then $a$ is called a \textbf{generator}.
+\end{defn}
+\begin{defn}
+    Let $a_1, a_2, \dots a_n \in R$. An \textbf{ideal generated by} $a_1, \dots a_n$ is
+    $$
+    (a_1, \dots a_n) = \{a_1r_1 + \dots + a_nr_n \mid r_i \in R\}
+    $$
+\end{defn}
+\begin{fact}
+    Given ideals $I, J \subset R$ we have
+    \begin{itemize}
+        \item $I \cap J$ is an ideal
+        \item $I + J = \{a + b \mid a \in I, b \in J \}$ is an ideal
+        \item $I \cdot J = \left\{\sum\limits_{i = 1}^{n}a_ib_i \mid a_i \in I, b_i \in J \right\}$ is an ideal
+    \end{itemize}
+\end{fact}

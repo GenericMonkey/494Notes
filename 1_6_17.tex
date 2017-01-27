@@ -1,0 +1,219 @@
+\section{January 6, 2017} %Pranav
+\begin{fact}
+    Let $\varphi: R \rightarrow S$ be a morphism. Then
+    $$
+    \ker(\varphi) = \{x \in R \mid \varphi(x) = 0\}
+    $$
+    is an ideal.
+\end{fact}
+\begin{proof} (A Pranav Exclusive)
+    We first show that the kernel is a subgroup of $(R, +, 0)$. Well, we first show that
+    $0 \in \ker(\varphi)$. Well,
+    $$
+    \varphi(0) = \varphi(0 + 0) = \varphi(0) + \varphi(0)
+    $$
+    so, we have that $\varphi(0) = 0$ and thus $0 \in \ker(\phi)$.
+    Next, we show that inverses are in the kernel as well. \\
+    If we have that $\varphi(a) = 0$, then we have
+    $$0 = \varphi(0) = \varphi(a + (-a)) = \varphi(a) + \varphi(-a) = \varphi(-a)$$
+    Now, we complete this step by proving closure. Assume $a,b \in \ker(\varphi)$. Then,
+    $$\phi(a + b) = \phi(a) + \phi(b) = 0 + 0 = 0$$
+    Thus, we have that the kernel is a subgroup. Now, we verify the second condition.
+    Fix $a \in R$ and $f \in \ker(\varphi)$. We have that
+    $$
+    \phi(a \cdot f) = \phi(a) \cdot \phi(f) = \phi(a) \cdot 0 = 0
+    $$
+    Thus, we have that $a \cdot f \in \ker(\varphi)$, meaning that $\ker(\varphi)$
+    is an ideal.
+\end{proof}
+\noindent Question: Is every ideal the kernel of morphism?
+\begin{prop}
+    Let $R$ be a ring, $I \subset R$ an ideal. Let $R / I$ be the quotient of
+    abelian groups and $p: R \rightarrow R / I$ the canonical projection. Then there is a
+    unique product map
+    $$
+    \cdot: R/I \times R/I \rightarrow R/I
+    $$
+    making $R / I$ into a ring such that $p$ is a morphism.
+\end{prop}
+\begin{proof}
+    For $p$ to be a morphism of rings, we need
+    \begin{itemize}
+        \item $p(1_R) = 1_{R/I}$
+        \item The following diagram to commute
+        \[ \begin{tikzcd}[%
+        ,every arrow/.append style={maps to}
+        ,every label/.append style={font=\normalsize}
+        ,row sep=1.5cm
+        ,column sep=1.5cm]
+        R \times R \arrow{r}{\cdot_R} \arrow[swap]{d}{p \times p} & R \arrow{d}{p} \\%
+        R/I \times R/I \arrow{r}{\cdot_{R/I}}& R/I
+        \end{tikzcd}
+        \]
+    \end{itemize}
+    Uniqueness of $\cdot_{R/I}$ follows from surjectivity of $p \times p$ (each element
+    in $R / I \times R/I$ must go precisely to the result of the composition of $p$ and
+    $\cdot_R$) \\
+    For existence, define $1_{R/I} = p(1_R)$ and $(a + I) \cdot (b + I) \defeq (a \cdot b) + I$.
+    We have to show this is well-defined (i.e it is independent of choice of $a, b$). \\
+    Well, choose $a^\prime, b^\prime$ such that $a^\prime  + I = a + I, b^\prime + I = b + I$.
+    Thus, $a^\prime = a + i$, $b^\prime = b + j$ for some $i, j \in I$. Then
+    $$
+    (a^\prime + I)(b^\prime + I) = (a^\prime \cdot b^\prime) + I = ((a + i)\cdot(b + j)) + I =
+    (a\cdot b + a \cdot j + b \cdot i + i \cdot j) + I = a\cdot b + I
+    $$
+    as we note that $a \cdot j, b \cdot i$, and $i \cdot j$ are all in $I$ as $I$
+    is an ideal. \\
+    We have that all of the ring axioms for $R / I$ are inherited from the ring
+    structure on $R$.
+\end{proof}
+\begin{rmk}
+    $\ker(p) = I$
+\end{rmk}
+\begin{thm}\label{thm:homomorphism} \textbf{(Homomorphism Theorem):}
+    Let $\phi: R \rightarrow S$ be a morphism of rings, $I \subset \ker(\varphi)$ be
+    an ideal of $R$. There is a unique morphism $\overline{\varphi}: R/I \rightarrow S$
+    such that $\overline{\varphi} \circ p = \varphi$ i.e.
+    \[
+\begin{tikzcd}[,every arrow/.append style={maps to}
+,every label/.append style={font=\normalsize},column sep=1.5em]
+ & R/I \arrow{dr}{\overline{\varphi}} \\
+R \arrow{ur}{p} \arrow{rr}{\varphi} && S
+\end{tikzcd}
+\]
+commutes. Moreover, $\overline{\varphi}$ is injective $\iff$ $\ker(\varphi) = I$
+\end{thm}
+\begin{proof}
+    All statements follow from looking at the abelian group $(R, +, 0)$ and its
+    subgroup $I$, except multiplicativity of $\overline{\varphi}$. \\
+    (A Pranav Exclusive) Some justification:
+    the uniqueness of this morphism follows because the projection map is surjective, meaning that in
+    order for the composition to be commutative, we must have that each element in $R / I$ maps exactly
+    to where its associated element maps under $\varphi$. Now, the existence. We simply need to check that
+    the map $\overline{\varphi}$ that sends $a + I$ to $\varphi(a)$ is well defined and is a morphism. We note that
+    the additive morphism properties are inherited from the fact that $\varphi$ is a morphism itself. So, we check
+    the well-definedness of $\overline{\varphi}$. Pick 2 representatives of $a + I$, call them $a + I$ and
+    $a^\prime + I$. We have that $a^\prime = a + i$ for $i \in I$. Then, we have that
+    $$
+    \overline{\varphi}(a^\prime + I) = \overline{\varphi}(a + i + I) = \overline{\varphi}(a + I) + \overline{\varphi}(i + I) =
+    \overline{\varphi}(a + I) + \overline{\varphi}(I) = \overline{\varphi}(a + I) + 0
+    $$
+    as we have that $\varphi(i) = 0$ for all $i \in I$ (since $I \subset \ker(\varphi)$). We finally verify the injective
+    biconditional. Assume $\overline{\varphi}$ is injective. We already have that $I \subset \ker(\varphi)$.
+    Now, since $\overline{\varphi}$ is injective, its kernel is trivial, and is thus the identity of $R / I$, namely $I$ itself.
+    For any $g \in \ker(\varphi)$ we note that $g + I$ must belong to the kernel of $\overline{\varphi}$, meaning that
+    $g + I = I$ and thus $g \in I$. This gives us double containment and thus equality. \\
+    Now, assume that $\ker(\varphi) = I$. We consider $\ker(\overline{\varphi})$. This is exactly the collection
+    $\{a + I \mid a \in \ker(\varphi) \}$. Thus, this is $\{a + I \mid a \in I\}$ and thus we have that
+    $\ker(\overline{\varphi}) = I$. Since the kernel of $\overline{\varphi}$ is trivial, we have that
+    $\overline{\varphi}$ is injective. \\
+    Checking Multiplicativity: Let $A,B \in R/I$. Choose $a,b \in R$ such that $p(a) = A, p(b) = B$. Then
+    $$
+    \overline{\varphi}(A \cdot B) = \overline{\varphi}(p(a)\cdot p(b)) =
+    \overline{\varphi}(p(ab)) = \varphi(ab) = \varphi(a)\varphi(b) =
+    \overline{\varphi}(p(a))\overline{\varphi}(p(b)) = \overline{\varphi}(A)\overline{\varphi}(B)
+    $$
+\end{proof}
+\begin{defn}
+    Let $R$ be a ring.
+    \begin{itemize}
+        \item Let $a,b \in R$. We say that \textbf{$a$ divides $b$} (denoted $a \mid b$)
+        if there is $c \in R$ such that $ac = b$.
+        \item We say $0 \neq a \in R$ is a \textbf{zero divisor} if there is
+        $0 \neq b \in R$ such that $ab = 0$.
+        \item We call $R$ a \textbf{domain} (or \textbf{integral domain}) if it has
+        no zero divisors.
+    \end{itemize}
+\end{defn}
+\begin{fact}
+    $a \mid b \iff (b) \subset (a) \iff b \in (a)$
+\end{fact}
+\begin{proof} (A Pranav Exclusive)
+    We first show the first forward implication. Assume that $a \mid b$. Then, there is
+    $c \in R$ such that $ac = b$. Now, fix $g \in (b)$. It is of the form $br$ for some
+    $r \in R$. Thus, we have that $g = (ac)r = a(cr)$. Since $cr \in R$, we have that $g \in (a)$. \\
+    Next, we show the second forward implication. Assume that $(b) \subset (a)$. Well,
+    $b \in (b) \subset (a)$. \\
+    Finally, we show that $b \in (a)$ implies the original condition. Well, if $b \in (a)$, then
+    $b = ar$ for $r \in R$. This is exactly what it means for $a \mid b$! Thus, we have
+    shown equality of the above statements.
+\end{proof}
+\begin{fact} (Cancellation Law) If $a \neq 0 \in R$ is not a zero divisor, then
+    for $x,y \in R$
+    $$
+    ax = ay \Rightarrow x = y
+    $$
+\end{fact}
+\begin{proof}
+    $ax = ay \iff a(x - y) = 0$. $a \neq 0$ implies that $x - y = 0$ as $a$ is not
+    a zero divisor.
+\end{proof}
+\begin{defn}
+    An ideal $I \subsetneq R$ is called
+    \begin{itemize}
+        \item \textbf{prime} if $a \cdot b \in I$ implies $a \in I$ or $b \in I$ for all $a,b \in R$.
+        \item \textbf{maximal} if $I$ and $R$ are the only ideals containing $I$.
+    \end{itemize}
+\end{defn}
+\begin{ex}
+    In $R = \ZZ$, the ideals are of the form $n\ZZ$. $n\ZZ$ is prime $\iff$ $n$ is prime or $n = 0$.
+\end{ex}
+\begin{proof}
+    (A Pranav Exlusive). We start with the forward direction. We proceed by contrapositive.
+    Assume that $n \neq 0$ and that $n$ is not prime. Then, $n$ is composite (we exclude $n = 1$ as
+    we must have a properly contained ideal by definition). Thus, we have that $n = ab$ for some $1 < a,b < n$.
+    Note that we have $ab = n \in n\ZZ$, but we have that both $a$ and $b$ are less than $n$, and thus there is no $z \in \ZZ$
+    such that $nz = a$ or $nz = b$. This means that $n\ZZ$ is not prime, as we have found $a,b$ such that
+    $ab \in n\ZZ$ but neither $a$ nor $b$ are in $n\ZZ$. \\
+    Now, the reverse direction. First, we show the condition for $n$ prime. Assume that we have $a,b \in \ZZ$ such that $ab \in n\ZZ$.
+    This means that we have $ab = nq$ for some $q \in \ZZ$. In particular, this means that $n$ divides
+    the product $ab$. However, we note that as $n$ is prime, we have that $n$ must divide $a$
+    or $b$ by Euclid's lemma. Thus, we have that either $a = nr$ or $b = nr$ (or both), which implies
+    that $a \in n\ZZ$ or $b \in n\ZZ$. Next, for $n = 0$. Well, if $ab \in 0\ZZ$, then $ab = 0$. This in $\ZZ$ implies
+    that either $a$ or $b$  is $0$ and is also in $n\ZZ$. This completes the reverse direction.
+\end{proof}
+\begin{thm}\label{thm:ideals}
+    Let $R$ be a ring.
+    \begin{enumerate}[i)]
+        \item $R$ is a domain $\iff \{0\}$ is prime.
+        \item $R / I$ is a domain $\iff I \subset R$ is a prime ideal.
+        \item Let $\varphi: R \rightarrow S$ be a morphism, $S$ a domain. Then
+        $\ker(\varphi)$ is prime. The converse is true if $\varphi$ is surjective.
+        \item $R$ is a field $\iff \{0\}$ is maximal.
+        \item $R / I$ is a field $\iff I \subset R$ is a maximal ideal.
+        \item Every field is a domain.
+        \item Every maximal ideal is prime.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    We first claim that iii) implies ii) which in turn implies i). First, for iii) implies
+    ii), we note that letting $S$ be $R / I$ (which means $\varphi$ is the projection
+    map $p$ (which is definitely surjective)) gives us ii). (We have that $\ker(p) = I$).\\
+    ii) implies i) simply by letting $I$ be the zero ideal. \\
+    Now, we prove statement iii). \\
+    Let $a, b \in R$ such that $a \cdot b \in \ker(\varphi)$. Then $0 = \varphi(a \cdot b) = \varphi(a)\varphi(b)$.
+    Since we have that $S$ is a domain, then we have no zero divisors, meaning that either
+    $\varphi(a) = 0$ or $\varphi(b) = 0$. This in turn implies that either $a \in \ker(\varphi)$ or $b \in \ker(\varphi)$,
+    so we have show that $\ker(\varphi)$ is a prime ideal. Now, the converse assuming surjectivity.
+    We want to show that $S$ has no zero divisors. Well, fix $A,B \in S$ such that $A \cdot B = 0$.
+    Since $\varphi$ is surjective, we have $a, b \in R$ such that $\varphi(a) = A$ and $\varphi(b) = B$.
+    Then, we have $0 = \varphi(a)\varphi(b) = \varphi(ab)$, meaning that $ab$ is in $\ker(\varphi)$.
+    Because we assume that $\ker(\varphi)$ is prime, this in turn implies that either
+    $a$ or $b$ is in $\ker(\varphi)$ meaning that either $\varphi(a) = 0$ or $\varphi(b) = 0$.
+    This means that either $A$ or $B$ is 0, and thus $S$ is a domain, as desired. \\
+    Next, note that v) implies iv). This comes from letting $I$ be the zero ideal. \\
+    The proof of v) comes from the bijection
+    $$
+    \{\textrm{ideals in $R$ containing $I$}\} \leftrightarrow \{\textrm{ideals in $R/I$}\}
+    $$
+    This is a homework problem. \\
+    Now, we show vi). Assume that $F$ is a field. Pick $a,b \in F$ such that $a \cdot b = 0$
+    with $a \neq 0$. We will show that $b$ must be 0, thereby showing that $F$ is a domain.
+    Well, since $a \neq 0$, and $F \backslash \{0\}$ is a group, we have that $a^{-1}$ exists.
+    Thus, we have that $ab = 0$ implies that $a^{-1}ab = 0$ and thus $b = 0$, as desired. \\
+    vii) follows from the facts vi), v) and ii). We have that
+    \begin{center}
+        $I$ is a maximal ideal $\overset{\textrm{v}}{\iff}$ $R/I$ is a field $\overset{\textrm{vi}}{\Rightarrow}$ $R / I$ is a domain
+        $\overset{\textrm{ii}}{\iff}$ I is prime.
+    \end{center}
+\end{proof}
