@@ -1,0 +1,150 @@
+\section{January 9, 2017}
+\begin{defn}
+    Let $R$ b a domain. The canonical morphism $\ZZ \rightarrow R$ of Fact \ref{fact:!morph} has
+    a prime ideal as its kernel. By Thm \ref{thm:ideals}, this is of the form
+    $p\ZZ$ with $p$ prime of $p = 0$. We call $p$ the \textbf{characteristic} of $R$.
+\end{defn}
+\begin{ex}
+\[
+\begin{tabular}{ll}
+    char$(\ZZ) = 0$ & char$(\Zn 3) = 3$ \\
+    char$(\QQ) = 0$ & char$(\Zn 6)$ doesn't exist! $\Zn 6 $ is not a domain.
+\end{tabular}
+\]
+\end{ex}
+\begin{unnumlemma}
+\textbf{(Zorn's Lemma)} (from Artin). An \textbf{inductive} (every totally ordered
+subset has an upper bound) partially ordered set $S$ has at least one maximal element.
+\end{unnumlemma}
+\begin{thm}
+    Let $R$ be a ring. Every proper ideal is contained in a max ideal.
+\end{thm}
+\begin{proof}
+    Let $I \subset R$ be a proper ideal. Let $\mathcal{M}$ be the set of all proper
+    ideals of $R$ that contain $I$, with partial order given by inclusion. \\
+    Let $\mathcal{C} \subset \mathcal{M}$ be a totally ordered subset.
+    \begin{claim}
+        $J_0 = \left(\bigcup\limits_{J \in \mathcal{C}}{J}\right) \in \mathcal{M}$
+    \end{claim}
+    \begin{proof} (of claim). We want to show that $J_0$ is a proper ideal containing
+        $I$. First, we show it is an ideal by showing closure of the subgroup and the
+        ideal multiplicative closure. Let $f_1, f_2 \in J_0$ and $a \in R$. Now, this means there
+        is $J_1, J_2 \in \mathcal{C}$ such that $f_1 \in J_1$ and $f_2 \in J_2$. However,
+        since $\mathcal{C}$ is totally ordered, we have that the larger of $J_1$ and $J_2$
+        contains both $f_1$ and $f_2$, meaning that we have the existence of $J \in \mathcal{C}$
+        such that $f_1,f_2 \in J$. Since $J$ is an ideal, we have that $f_1 + f_2 \in J$ and that
+        $a \cdot f_1 \in J$. This thus implies that since $J \in \mathcal{C}$, we have that
+        $a \cdot f_1$ and $f_1 + f_2$ are both in $J_0$. Thus $J_0$ is an ideal. Since $I \in \mathcal{C}$,
+        we also have that $I \subset J_0$. Finally, $J_0$ is not $R$, because otherwise $1 \in J_0$,
+        which would mean that $1 \in J$ for some $J \in \mathcal{C}$. This would then imply that
+        that $J = R$, which is not possible as $J$ itself is a proper ideal. Thus, we have that $J_0 \in \mathcal{M}$.
+    \end{proof}
+    Thus, for every totally ordered subset of $\mathcal{M}$, we have the existence of an
+    upper bound (namely $J_0$). This gives us, by Zorn's Lemma, that $\mathcal{M}$ has
+    a maximal element. This maximal element is exactly what we wished to show existed.
+\end{proof}
+\begin{defn}
+Let $R,S$ be rings. Their product is the set $R \times S$ with component-wise
+operations
+\begin{itemize}
+    \item $(r,s) + (r^\prime, s^\prime) = (r + r^\prime, s + s^\prime)$
+    \item $(r,s) \cdot  (r^\prime, s^\prime) = (r \cdot r^\prime, s \cdot s^\prime)$
+    \item $1_{R \times S} = (1_R, 1_S), 0_{R \times S} = (0_R, 0_S)$
+\end{itemize}
+\end{defn}
+\begin{rmk}
+    Given morphisms $\varphi_1:R \rightarrow S_1, \varphi_2:R \rightarrow S_2$, we
+    get a unique morphism $\varphi_{1} \times \varphi_2: R \rightarrow S_1 \times S_2$.
+\end{rmk}
+\begin{rmk}
+    Given $I,J \subset R$ ideals we have
+    $$
+    I \cdot J \subset I \cap J \subset I, J \subset I + J
+    $$
+\end{rmk}
+\begin{defn}
+    Two ideals $I,J \subset R$ are \textbf{coprime} if $I + J = R$.
+\end{defn}
+\begin{thm}
+    \textbf{(Chinese Remainder Theorem)} Let $R$ be a ring, $I_1, \dots I_n \subset R$
+    be pairwise coprime ideals. Then the natural morphism
+    $$
+    p: R \rightarrow R / I_1 \times R / I_2 \times \dots \times R / I_n
+    $$
+    factors through the quotient $R / (I_1 \cap I_2 \cap \dots \cap I_n)$ and induces
+    an isomorphism of rings
+    $$
+    \overline{p}: R / (I_1 \cap I_2 \cap \dots \cap I_n) \rightarrow R / I_1 \times R / I_2 \times \dots \times R / I_n
+    $$
+    Moreover, $I_1 \cdot I_2 \cdots I_n = I_1 \cap I_2 \cap \dots I_n$
+\end{thm}
+\begin{proof}
+    As $p$ is the natural morphism to a product of rings, we let $p = p_1 \times p_2 \dots \times p_n$,
+    where each $p_i$ is the projection morphism from $R$ to $R / I_i$. Now, we can say that
+    $\ker(p) = \{r \in R \mid 0 = p_1(r), 0 = p_2(r), \dots 0 = p_n(r) \}$. Well, since each $p_i$ by definition has
+    kernel exactly $I_i$, this is the same as saying that
+    $\ker(p) = \{r \in R \mid r \in I_1 \cap I_2 \cap \dots \cap I_n \}$. \\
+    By the homomorphism theorem (\ref{thm:homomorphism}), we have that $p$ factors through
+    $R / I_1 \cap I_2 \cap \dots I_n$ and also induces an injective ring morphism
+    $\overline{p}: R/ I_1 \cap \dots \cap I_n \rightarrow R/I_1 \times \dots R/I_n$.
+    \begin{claim}
+        $\overline{p}$ is also surjective, and hence a isomorphism.
+    \end{claim}
+    \begin{proof} (of claim)
+        We note that since each of the ideals are coprime, we have that $I_1 + I_k = R$.
+        Now, we also note that $R \cdot R = R$. Thus, we can express
+        $$
+        R = (I_1  + I_2) \cdot (I_1 + I_3) \cdots (I_1 + I_n)
+        $$
+        expanding the product, we note that by the earlier remark that any term
+        containing an $I_1$ (which is almost all of them) will be contained in
+        $I_1$. The only term that is outside arises from selecting the second term
+        in every single term of the product, so we can write that the above expression
+        is
+        $$
+        \subset I_1 + (I_2 \cdot I_3 \cdots I_n)
+        $$
+        Now, since $R \subset I_1 + (I_2 \cdot I_3 \cdots I_n)$, we can take
+        $v_1 \in I_1$ and $u_1 \in I_2 \cdots I_n$ such that $u_1 + v_1 = 1$.
+        Now, since $u_1 \in I_2 \cdots I_n$, $u_1 \in I_j$ for $j \neq 1$. Thus,
+        we can say that $u_1$ maps to $0_{R/I_j}$ under the projection map, as it is
+        in the kernel. \\
+        Similarly, since $u_1 = 1 - v_1$, with $v_1 \in I_1$, we have that $u_1 \in 1 + I$,
+        meaning that $u_1$ maps to $1_{R/I_1}$ under the projection map. \\
+        So, we have (abusing notation) that $u_1 = 1$ in $R/I_1$ and $u_1 = 0$ in $R/I_j$ for $j \neq 1$
+        (really, as we showed above, it belongs to the associated cosets). \\
+        Now, we can repeat this construction with any $I_i$ instead of $I_1$.
+        Thus, we get for each such construction a $v_i \in I_i$ and $u_i \in I_1 \cdot I_2 \cdots \widehat{I_i} \cdots I_n$
+        With this construction, we now have the existence of the $u_i$ that belong
+        to the $1$ coset in exactly $R/I_i$ and the $0$ coset in all remaining $R/I_j$.
+        With this, we can prove surjectivity.
+        Fix any $(x_1, \dots x_n) \in R/I_1 \times \dots R/I_n$. We have that there exists
+        an associated $r_1, \dots r_n \in R$ such that $p_1(r_1) = x_1, \dots p_n(r_n) = x_n$.
+        Now, if we consider the element $r \in R$ that equals $u_1r_1 + u_2r_2 \dots u_nr_n$,
+        note that $p(r) = (p_1(r), p_2(r) \dots p_n(r))$. However, since the $u_i$ map to $1$ under
+        $p_i$ and to $0$ otherwise, this maps precisely to $(x_1, \dots x_n)$. Thus, we have
+ that $p(r)$ maps to the desired element in the product, meaning that the
+        associated coset will map to the desired element under $\overline{p}$. This proves
+        surjectivity.
+    \end{proof}
+    Thus, we have that $\overline{p}$ is an isomorphism. Now, we show the second part of
+    part of the statement. \\
+    Well, we know by definition that $I_1 \cdot I_2 \cdots I_n \subset I_1 \cap \dots \cap I_n$. So,
+    we simply need to show the other containment, which we do by induction on $n$. \\
+    $n = 1$: $I_1 \subset I_1$. \\
+    $n = 2$: Take $u_1 \in I_1$ and $u_2 \in I_2$ such that $1 = u_1 + u_2$ (this exists as $I_1 + I_2 = R$.)
+    Now, for any $u \in I_1 \cap I_2$, we have
+    $$
+    u = u \cdot 1 = u \cdot (u_1 + u_2) = u \cdot u_1 + u \cdot u_2
+    $$
+    Since $u \in I_1$ and $u \in I_2$, we have $u \cdot u_1 \in I_2 \cdot I_1$ and
+    $u \cdot u_2 \in I_1 \cdot I_2$. Thus, we have the sum in $I_1 \cdot I_2$. This gives us
+    $I_1 \cap I_2 \in I_1 \cdot I_2$. \\
+    Now, for general $n$. By the inductive hypothesis, we have that
+    $I_1 \cap I_2 \dots I_n \subset (I_1 \cdots I_{n-1}) \cap I_n$. From the claim above,
+    we know that $R = (I_1 \cdot I_{n-1}) + I_n$. This implies thus that the ideals
+    $(I_1 \cdots I_{n-1})$ and $I_n$ are coprime. Thus, applying the $n = 2$ case on these
+    2 ideals, we have that $(I_1 \cdots I_{n-1}) \cap I_n \subset (I_1 \cdots I_{n-1}) \cdot I_n$,
+    thereby proving the desired result.
+\end{proof}
+

@@ -1,0 +1,141 @@
+\section{January 11, 2017}
+\begin{rmk}
+\begin{itemize}
+        \item Any field is a domain.
+        \item Any subring of a domain is a domain.
+        \item Any subring of a field is a domain.
+    \end{itemize}
+Is the opposite true?
+\end{rmk}
+\begin{thm}
+Let $R$ be a domain.
+
+1) There exists a pair $(i,K)$ with $K$ a field, $i:R\rightarrow K$ an injective morphism such that if $(j,L)$ is another such pair, there exists a morphism $l:K\rightarrow L$ such that $j=l\circ i,$ which is to say that the following diagram commutes.
+
+\begin{tikzcd}[,every arrow/.append style={maps to}
+,every label/.append style={font=\normalsize},column sep=1.5em]
+ & R \arrow{dr}{j}\arrow{dl}{i} \\
+K \arrow{rr}{l} && L
+\end{tikzcd}
+
+2) If $(i',K')$ is another pair as in 1) there exists a unique isomorphism $\phi:K\rightarrow K'$ such that
+
+\begin{tikzcd}[,every arrow/.append style={maps to}
+,every label/.append style={font=\normalsize},column sep=1.5em]
+ & R \arrow{dr}{i'}\arrow{dl}{i} \\
+K \arrow{rr}{\phi} && K'
+\end{tikzcd} commutes.
+
+\end{thm}
+
+\begin{rmk}
+
+\begin{itemize}
+	\item $(i,K)$ is an example of a ``universal object"
+	\item $(j,L)$ is called a test object
+	\item $K$ is produced from $R,$ just like the rationals are produced from the integers.
+\end{itemize}
+
+\end{rmk}
+\begin{proof}
+
+2) Given two universal objects $(i,K),(i',K'),$ apply 1) with $(i,K)$ as the universal object, and $(i',K')$ as a test object to get $l:K\rightarrow K'$. Do it the other way to get $l':K'\longrightarrow K.$
+
+\begin{claim}
+
+$l\circ l'=\text{id}_{K'},l'\circ l=\text{id}_K$
+
+\begin{proof}
+
+Note that both $l'\circ l$ and $\text{id}_k$ make the diagrams
+
+\begin{tikzcd}[,every arrow/.append style={maps to}
+,every label/.append style={font=\normalsize},column sep=1.5em]
+ & R \arrow{dr}{i}\arrow{dl}{i} \\
+K \arrow{rr}{l'\circ l} && L
+\end{tikzcd}
+
+\begin{tikzcd}[,every arrow/.append style={maps to}
+,every label/.append style={font=\normalsize},column sep=1.5em]
+ & R \arrow{dr}{i}\arrow{dl}{i} \\
+K \arrow{rr}{\text{id}_K} && L
+\end{tikzcd} commute.
+
+When $(i,k)$ is both a universal object and a test object, we get $l\circ l=\text{id}_K.$ \end{proof}
+\end{claim}
+
+
+1) Consider the set $P=R\times R\setminus\{0\}$. Introduce the relation $(n,d)\sim (n',d')\iff nd'=n'd$.
+
+\begin{claim}
+
+$\sim$ is an equivalence relation.
+
+\begin{proof}
+
+Reflexive: $(n,d)\sim(n,d)\iff nd=nd.$
+
+Symmetric $(n,d)\sim(n',d')\iff nd'=n'd\iff n'd=nd'\iff (n',d')\sim (n,d).$
+
+Transitive: Assume $(n_1,d_1)\sim(n_2,d_2)\sim(n_3,d_3)$. We want $(n_1,d_1)\sim(n_3,d_3).$
+We have $n_1d_2=n_2d_1,n_2d_3=n_3d_2$ and want $n_1d_3=n_3d_1.$
+We see that $n_1d_3 n_2d_2=n_1d_3n_2d_3=n_2d_1n_3d_2=n_3d_1n_2d_2.$
+Since $R$ is a domain, $n_2d_2$ is not a zero-divisor. If $n_2d_2\ne 0$, then by Fact 6, Jan 6, we get $n_1d_3=n_3d_1$. If $n_2d_2=0$, then ($d_2\ne 0$ and not a 0-divisor) $n_2=0$. For the same reason, $n_1=n_3=0.$ Again, $n_1d_3=n_3d_1$. Either way, we are done.
+\end{proof}
+\end{claim}
+
+Put $K=P/\sim.$ Write $[n,d]$ for the image of $(n,d)\in P$ in $K$. Define
+
+$$[n,d]\cdot[n',d']=[nn',dd']$$
+
+$$[n,d]+[n',d']=[nd'+n'd,dd']$$
+
+$$0=[0,1],1=[1,1]$$
+
+$$i:R\rightarrow K, i(r)=[r,1].$$
+
+We leave as homework the verifications that $+,\cdot$ are well defined, that $K$ is a field, and that $i$ is a morphism. Injectivity is obvious. Given $(j,L)$, define $l:K\longrightarrow L$ by
+
+$$l([n,d])=l(i(n))\cdot l(i(d)^{-1})=j(n)j(d)^{-1}.$$
+
+Homework: $l$ is well defined and a ring morphism.
+
+\end{proof}
+
+\begin{defn}
+
+A pair $(i,K)$ is called a (the) field of fractions (fraction field) of $R$.
+
+\end{defn}
+
+\begin{defn}
+
+1) Let $R$ be a ring. A polynomial in $T$ over $R$ is a formal expression $a_nT^n+a_{n-1}T^{n-1}+\ldots+a_0,a_i\in R.$
+
+2) Given $P(T)=a_nT^n+\ldots+a_0,Q(T)=b_nT^n+\ldots+b_0$ define
+
+$$(P+Q)(T)=(a_n+b_n)T^n+\ldots+(a_0+b_0)$$
+
+$$(P\cdot Q)(T)=(c_mT^m+c_{m-1}T^{m-1}+\ldots+c_0$$ where
+
+$$c_k=\sum_{i+j=k}a_i\cdot b_j.$$
+
+3) Given $r\in R$ we have the constant polynomial
+$r:(a_nT^n+\ldots+a_0,a_0=r,a_i=0\text{ for } i>0).$ In particular, we have $0,1$ as constant polynomials.
+
+4) Let $R[T]$ be the set of al polynomial in $T$ over $R$.
+
+\begin{fact} $(R[T],+,\cdot,0,1)$ is a ring. Moreover $R\rightarrow R[T]$, $r\rightarrow$ constant polynomial $r$ is an injective morphism. The proof is left as an exercise to the reader.
+\end{fact}
+
+\end{defn}
+
+\begin{defn}
+
+Given $0\ne P\in R[T],$ define deg$(P)=\min\{n|a_m=0\forall m>n\}$, deg$(0)=-\infty$.
+\end{defn}
+\begin{fact}\label{polyringdomain}
+1) deg$(P+Q)\leq\max(\text{deg}(P),\text{deg}(Q))$ with equality if deg$(P)\ne$ deg$(Q)$.
+2) deg$(P\cdot Q)\leq$ deg$(P)+$deg$(Q)$ with equality if the leading coefficient of $P$ (or $Q$) is not a 0 divisor.
+3) In particular, if $R$ is a domain, so is $R[T].$ The proof is left as an exercise to the reader.
+\end{fact}
