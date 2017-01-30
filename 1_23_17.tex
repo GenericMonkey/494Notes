@@ -1,0 +1,41 @@
+\section{January 23, 2017}
+Recall: $P\in R[T]$ is primitive if $a|P\Longrightarrow a\in R^{\times}$.
+Lemma 8 (Gauss): $P,Q$ primitive $\Longrightarrow P\cdot Q$ primitive.
+
+$R$ is a UFD, $F$ is it's fraction field
+\begin{lemma}
+    Let $P,Q\in R[T], P$ primitive. If $Q=a\cdot P, a\in F$, then $a\in R$.
+\end{lemma}
+\begin{proof}
+    Write $a={n\over d}$ with $n,d\in R$. Decompose $n=\epsilon n_1,\ldots, n_k,d=\mu v_1,\ldots,v_k$ into irreducibles. We may assume $n_i\sim v_j$ for $i,j$. Then $\mu v_1,\ldots, v_kQ=\epsilon   n_1\ldots n_k P$. So $v_1|n_1\ldots n_ka_i$ for all $i$, where $P(T)=a_nT^n+\ldots+a_0$. Since $v_1$ is prime, and $n_i$ are irreducible, and $v_1\nsim u_1,\ldots, u_k$, so $v_1|a_i$ for all $i$. This contradicts primitivity of $P$. 
+\end{proof}
+\begin{thm}
+    The ring $R[T]$ is a UFD and its irreducible elements are
+    (1) $p\in R$ irreducible
+    (2) $P\in R[T]$ primitive, and irreducible in $F[T]$.
+\end{thm}
+\begin{proof}
+    Step 1: The above elements are irreducible. 
+    Given $p\in R$ irreducible, write $p=PQ,$ with $P,Q\in R[T]$. Since $R$ is a domain, we have $0=\text{deg}(P)=\text{deg}(P)+\text{deg}(Q)$, so $P,Q\in R$. But then either $P\in R^{\times}$ or $Q\in R^{\times}.$
+    Let $P\in R[T]$ be primitive, irreducible in $F[T]$. Write $P=QS$ with $Q,S\in R[T].$ Since $P$ is irreducible in $F[T],$ either $Q$ or $S$ lies in $F[T]^{\times}=F^{\times}$ by proposition 2, Jan 13th. Say WOLOG $S=R[T]\cap F^{\times}=R\setminus[0].$ Then $S^{-1}P=Q$. By lemma 1, $S^{-1}\in R.$ So $S\in R^{\times}.$ 
+    Step 2: Every element of $R[T]$ has a decompose with factors as in 1), 2).
+    Take $P\in R[T].$ Decompose $P$ as an element of $F[T]$. $P=c\cdot \tilde{Q}_1,\ldots,\tilde{Q}_n, c\in F^{\times}, \tilde{Q}_i\in F[T]$ irreducible. By lemma 3, write $\tilde{Q}_I=c_i\cdot Q_i$ with $c_i\in F^{\times}, Q_i\in R[T]$ primitive. Thus $P=c\cdot c_1,\ldots c_n\cdot Q_1,\ldots Q_n$. By Gauss lemma, $Q_1,\ldots Q_n$ is primitive, so by lemma 1, $a\in R$. Factor $a=\epsilon n_1,\ldots n_k$ in $R$. 
+    
+    Remark: This shows in particular, that (1)+(2) are all the irreducible elements in $R[T]$.
+    Uniqueness of factorization
+    Let $\epsilon n_1,\ldots, n_k P_1,\ldots, P_n= \mu v_1\ldots v_l Q_1-Q_m$ with $u_i,v_j$ as in (1) and $P_i,Q_j$ as in (2). Uniqueness in $F[T]$ tells us $n>m$, and after reordering, $P_i=c_iQ_i$ with $c_i\in F^{\times}$. Applying lemma 1 to $P_i=cP_iQ_i$ and $c_i^{-1}P_i=Q_i$ to see $c_i\in R^{\times}$. Thus $P_i\sim Q_i$ is $R[T]$. Then $\epsilon n_1,\ldots, n_k=\mu {Q_1\ldots Q_n\over P_1\ldots P_n}\cdot v_1\ldots _l$ and uniqueness in $R$ gives us $k=l$ and $n_i\sim v_i$ after reordering.
+\end{proof}
+
+\begin{lemma}
+    Let $0\ne P\in F[T].$ There exists $c\in F^{\times}$ such that $cP\in R[T]$ primitive.
+\end{lemma}
+\begin{proof}
+There is $a\in R$ such that $aP\in R[T].$ Let $d$ be a gcd of all coefficients of $aP$. Then $d|ap$ and $ad^{-1}P\in R[T]$ primitive.
+\end{proof}
+\begin{lemma}
+Let $P,Q\in R[T],P$ primitive. Then $P/Q$ in $R[T]\iff P/Q\in F[T]$.
+\end{lemma}
+\begin{proof}
+$\Longrightarrow$: trivial.
+$\Longleftarrow$: Let $Q=P\tilde{S}$ with $\tilde{S}\in F[T]$. By lemma 3, $\tilde{S}=aS,a\in F^{\times}$. $S\in R[T]$ primitive. So $Q=aPS$. By Gauss lemma, $PS$ is primitive. By lemma 1, $a\in R$, then $\tilde{S}=aS\in R[T].$
+\end{proof}

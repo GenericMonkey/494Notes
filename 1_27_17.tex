@@ -1,89 +1,4 @@
-\documentclass{amsart}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{enumerate}
-\usepackage{graphicx}
-\usepackage{dsfont}
-\usepackage{bbm}
-\usepackage{tikz}
-\usepackage{tikz-cd}
-\usepackage{xifthen}
-\usepackage{cancel}
-\usepackage{hyperref}
-
-\setlength{\textwidth}{\paperwidth}
-\addtolength{\textwidth}{-2in}
-\calclayout
-
-\newcommand{\NN}{\mathbb{N}}
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\HH}{\mathbb{H}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\Zn}[1]{\mathbb{Z} / #1 \mathbb{Z}}
-\newcommand{\CC}{\mathbb{C}}
-\newcommand{\FF}{\mathbb{F}}
-\newcommand{\PP}{\mathbb{P}}
-\newcommand{\dd}[2][ ]{\frac{\partial #1}{\partial #2}} % Partial derivative
-\newcommand{\dsq}[3][ ]{\frac{\partial^2 #1}            % Second partial
-{\ifthenelse { \equal {#2} {#3} }{\partial #2^2}{\partial #2 \partial #3}}}
-\newcommand{\defarr}                        %definition iff arrow
-{\overset{\textrm{def}}{\Longleftrightarrow}}
-\newcommand{\defeq}                         %definition equality sign
-{\overset{\textrm{def}}{=}}
-\newcommand{\argeq}[1]                      %definition equality sign
-{\overset{\textrm{#1}}{=}}
-
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\orb}{orb}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\stab}{Stab}
-\DeclareMathOperator{\sgn}{sign}
-\DeclareMathOperator{\spn}{span}
-\DeclareMathOperator{\tr}{tr}
-
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem*{unnumlemma}{Lemma}
-\newtheorem{fact}[thm]{Fact}
-\newtheorem{prop}[thm]{Propostion}
-\newtheorem*{claim}{Claim}
-\newtheorem{cor}{Corollary}
-
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\theoremstyle{remark}
-\newtheorem*{rmk}{Remark}
-\newtheorem*{ex}{Example}
-%==============================================================================
-% MATH 494 Collaborative Notes
-% This is a collaborative notesheet that consists of notes from each day in Math
-% 494, transcribed into Tex format for convenience and security from the
-% Notebook Thief. General format:
-% Contribute by adding a new section, titled "Month Day, Year"
-% This is done in the format \section{Date}
-% Tex notes using the numbering system used by Tasho himself. I've set up the
-% counters on the theorems, definitions, and "facts" to run in tandem with the
-% section that the content is in.
-% Make sure to properly wrap all proofs, facts, and definitions using the above
-% environments.
-% Enjoy!
-% Current Collaborators:
-% 1. Pranav
-% 2. Nick
-% 3. Andrew
-% 4. Ben
-%==============================================================================
-\begin{document}
-\title{Math 494: Honors Algebra II}
-\maketitle
-\tableofcontents
-
-\section{Jan. 27, 2017}
+\section{January 27, 2017}
 
 \begin{defn}
 \hspace{0.5cm}
@@ -152,10 +67,9 @@ Let $L/k$ be an extension, and $a \in L$. If there is $0 \neq p \in k[T]$ such t
 As per the above definitions, we would like to study the following construction: let $\text{ev} \colon k[T] \rightarrow L$, $p \mapsto p(a)$ be the evaluation morphism. If $a$ is transcendental, ev is injective. Further, since $L$ is a field, we have that ev factors uniquely through the fraction field $k(T)$\footnote{This notation was established on homework: $k(T)$ is the set of rational functions with coefficients in $k$.} and induces an isomorphism $k(T) \stackrel{\sim}{\rightarrow} k(a)$. If $a$ is algebraic, let $0 \neq I \subset k[T]$ be the kernel of ev. Since $k[T]$ is a Euclidean domain, hence a PID (see a proposition from Jan. 20), so there exists a unique monic polynomial $p \in k[T]$ such that $(p) = I$.
 
 \begin{defn}
-$p$ is called the \textit{minimal polynomial} of $a$ over $k$ $a/k$, written $Ma/k$. $deg(a/k) := \deg(Ma/k)$ is its \textit{degree}.
+$p$ is called the \textit{minimal polynomial} of $a$ over $k$, $a/K$, written $M_{a/K}$. $deg(a/K) := \deg(M_{a/K})$ is its \textit{degree}.
 \end{defn}
 
 \begin{rmk}
-$Ma/k$ is also the minimal polynomial of the endomorphism (linear operator that is not necessarily an isomorphism) $a \cdot \colon L \rightarrow L$.
+$M_{a/K}$ is also the minimal polynomial of the endomorphism (linear operator that is not necessarily an isomorphism) $a \cdot \colon L \rightarrow L$.
 \end{rmk}
-\end{document}
