@@ -1,0 +1,59 @@
+\section{February 8, 2017}
+
+\begin{prop}
+    Let $L_1, L_2$ be two minimal splitting fields of $P \in K[T] \setminus K$.
+    Then $L_1 / K \cong L_2 / K$
+\end{prop}
+
+\begin{proof}
+    We note that both $L_2$ and $L_1$ are $K$-algebras. By (Cor 5, Feb 6 (FIXME)),
+    there exist $K$-algebra morphisms $\varphi_2: L_2 \rightarrow L_1$ and $\varphi_1: L_1 \rightarrow
+    L_2$.
+    \[
+\begin{tikzcd}[,every arrow/.append style={maps to}
+,every label/.append style={font=\normalsize},column sep=1.5em]
+L_1  \arrow[rr, dashrightarrow] && L_2 \\
+ & \arrow[ul, hook] K \arrow[ur, hook] \\
+\end{tikzcd}
+\]
+We know that both of these spaces are finite dimensional (so $\dim_K(L_1) < \infty$
+and $\dim_K(L_2) < \infty$ ). These maps are $K$-linear, and are also morphism
+of fields, and thus they are injective. Since the dimensions are finite and we
+have injective maps in both directions, we have that $\varphi_1$ and $\varphi_2$ are
+in fact isomorphisms.
+\end{proof}
+
+\begin{prop}
+    Let $L / K$ be a finite extension. The following are equivalent.
+    \begin{enumerate}
+        \item $L$ is the minimal splitting field of some $P \in K[T] \setminus K$.
+        \item For every $a \in L$, $M_{a/K}$ decomposes into linear factors in $L[T]$.
+        \item For any extension $M/K$, all $K$-algebra morphisms $L \rightarrow M$
+        have the same image.
+    \end{enumerate}
+\end{prop}
+\begin{defn}
+    A finite extension $L / K$ is called \textbf{normal} if it satisfies the conditions
+    above.
+\end{defn}
+\begin{ex}
+    $K = \QQ$, $L = \QQ[T] / (T^2 + 1)$. \\
+    Checking the conditions: If we consider $M = \CC$, $a \in L$ defined as the image of $T$
+    (that is, the coset $T + (T^2 + 1)$) we know that the set of $K$ algebra morphisms
+    from $K(a)$ (which is isomorphic to $L$) we have a bijection between morphisms
+    and roots of $T^2 + 1 \in \CC$. namely $i$ and $-i$. So, the two
+    morphisms are defined by sending $a \rightarrow i$ and $a \rightarrow -i$. Both
+    of these morphisms have image exactly $\QQ[i]$.
+\end{ex}
+\begin{ex}
+    A nonexample: $K = \QQ$, $L = \QQ[T] / (T^3 - 2)$. \\
+    Again by logic above, we have three morphisms defined for all the
+    roots of $T^3 - 2$ in $\CC$, which are $\sqrt[3]{2}$ multiplied by the
+    3rd roots of unity. However, we note that the morphism that sends
+    $a \mapsto \sqrt[3]{2}$ has image $\{a + \sqrt[3]{2}b \mid a, b \in \QQ\} \subset \RR$ \\
+    However, the others, as they have complex parts in their roots of unity, do not
+    map into $\RR$. Thus, the images do not agree. \\
+    Some intuition: $\QQ[T] / (T^3 - 2)$ adds a single root but not all three needed
+    to split. This, in contrast with $\QQ(\zeta_3)[T] / (T^3 - 2)$ (where $\zeta_3$ is a non
+    real third root of unity) only needs to add $\sqrt[3]{2}$ to split.
+\end{ex}
