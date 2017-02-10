@@ -8,13 +8,13 @@
 \item[(iii)] An \textit{extension} of a field $k$ is a field $L$ containing $k$, denoted $L/k$.
 \end{enumerate}
 \end{defn}
- 
+
 \begin{rmk}
 If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vector space. An extension $L/k$ is called \textit{finite} if $\dim_k(L) < \infty$. In this case define the \textit{degree} of $L/k$, denoted $[L : k] \stackrel{\text{def}}{=} \dim_k(L)$.\footnote{Debacker noted that the use of this notation, identical to the index of a subgroup, is because field extensions are in fact group-theoretic. When Galois groups are added to the notes, this will be discussed below.}
  \end{rmk}
- 
+
 \begin{fact}
- If $k_1, k_2$ are subgields of $L$, $k_1 \cap k_2$ is a subfield.
+ If $k_1, k_2$ are subfields of $L$, $k_1 \cap k_2$ is a subfield.
 \end{fact}
 
 \begin{defn}
@@ -22,11 +22,11 @@ If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vec
 \begin{enumerate}
 \item[(i)] Every field has a smallest field, called the \textit{prime subfield}, equal to $\bigcap_{k \subset L} k^{\text{field}}$, the intersection of all subfields of $L$. \\
 \textit{Example:} The prime subfield of $\RR$ is $\QQ$. To see this, observe: any subfield of $\RR$ must contain 1 and 0, thus sums of the form $1 + \cdots + 1$, so it must contain $\NN$. Throwing in additive and then multiplicative inverses gives $\QQ$.
-\item[(ii)] Given an extension $L/k$ and any subset $S \subset L$, let $k(S)$ be the smallest subfield of $L$ containing $k$ and $S$. 
+\item[(ii)] Given an extension $L/k$ and any subset $S \subset L$, let $k(S)$ be the smallest subfield of $L$ containing $k$ and $S$.
 \end{enumerate}
 \end{defn}
 
-\begin{prop}
+\begin{prop}\label{prop:domtoField}
 Let $L$ be a ring and $k \subset L$ a subfield. If $L$ is a domain and $\dim_k(L) < \infty$ then $L$ is a field.
 \end{prop}
 \begin{proof}
@@ -34,7 +34,7 @@ Let $0 \neq a \in L$. The map $a \cdot \colon L \rightarrow L$ that sends $x$ to
 \end{proof}
 
 \begin{defn}
-Let $L/k$ be an extension, $L \supset E, F \supset k$ intermediate fields, each finite over $k$. The \textit{composite of E and F} is 
+Let $L/k$ be an extension, $L \supset E, F \supset k$ intermediate fields, each finite over $k$. The \textit{composite of E and F} is
 \[E \cdot F = \left\{ \sum_{i = 1}^n e_i \cdot f_i \colon n \in \NN, e_i \in E, f_i \in F \right\}.\]
 \end{defn}
 
@@ -56,8 +56,8 @@ Let $\{v_1, ..., v_n\}$ be a basis for $V$ over $L$, $\{\ell_1, ..., \ell_m\}$ b
 \end{enumerate}
 \end{proof}
 
-\begin{cor}
-If $M/L/k$ is a tower of finite ixtensions, then $[M : k] = [M : L] \cdot [L : k]$.
+\begin{cor}\label{cor:prodExt}
+If $M/L/k$ is a tower of finite extensions, then $[M : k] = [M : L] \cdot [L : k]$.
 \end{cor}
 
 \begin{defn}
