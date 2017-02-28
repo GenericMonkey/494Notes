@@ -1,45 +1,45 @@
 \section{February 3, 2017}
 
-\begin{defn}
-Let $K$ be a field. An algebraic closure of $K$ is an algebraic extension $\bar{K}/K$ such that $\bar{K}$ is alg. closed.
+\begin{defn} \label{Defn 1, Feb 3}
+Let $K$ be a field. An \textbf{algebraic closure of $K$} is an algebraic extension $\bar{K}/K$ such that $\bar{K}$ is alg. closed.
 \end{defn}
-\begin{lemma}
+\begin{lemma} \label{Lemma 2, Feb 3}
 Let $L/K$ be an extension of $K$ that is algebraically closed and $\bar{K}\subset L$ be the subfield of all elements algebraic over $K$. Then $\bar{K}$ is algebraically closed.
 \end{lemma}
 \begin{proof}
-$P\in \bar{K}[T]-\bar{K}.$ Let $a\in L$ such that $P(a)=0$. Then $a$ is algebraic over $\bar{K},\bar{K}(a)$ is algebraic over $\bar{K}$. By Prop 1, Feb 1, $\bar{K}(a)$ is algebraic over $k$, hence $a$ is algebraic over $k$. Thus $a\in\bar{K}$.
+$P\in \bar{K}[T]-\bar{K}.$ Let $a\in L$ such that $P(a)=0$. Then $a$ is algebraic over $\bar{K},\bar{K}(a)$ is algebraic over $\bar{K}$. By \ref{Prop 1, Feb 1}, $\bar{K}(a)$ is algebraic over $k$, hence $a$ is algebraic over $k$. Thus $a\in\bar{K}$.
 \end{proof}
-\begin{cor}
+\begin{cor} \label{Cor 3, Feb 3}
 Every field has an algebraic closure.
 \end{cor}
 \begin{proof}
-Thm 4, Feb 1 and Lemma 2.
+\ref{Thm 4, Feb 1} and \ref{Lemma 2, Feb 3}.
 \end{proof}
-\begin{prop}
+\begin{prop} \label{Prop 4, Feb 3}
 Let $K$ be a field, $G\subset K^{\star}$ is a finite subgroup. Then $G$ is cyclic.
 \end{prop}
 \begin{proof}
-Commutative $G$ is a direct product of its Sylow subgroups. We will show that all these Sylow subgroups are isomorphic to $(\mathbb{Z}/p^n\mathbb{Z},t)$ for some $n$ and $p$. Then by the CRT we conclude that $G$ is cyclic. WOLOG assume $G$ has $p$-power order. That is, $|G|=p^n$. If $G$ is not isomorphic to $\mathbb{Z}/p^n\mathbb{Z}$, then there exists $m<n$ such that every element is killed by $p^m$. Then every element of $G$ is a root of $T^{p^m}-1$. But corollary 1, Jan 28, $T^{p^m}-1$ has at most $p^m$ distinct roots. Oops! This contradicts $|G|=p^n$.
+Commutative $G$ is a direct product of its Sylow subgroups. We will show that all these Sylow subgroups are isomorphic to $(\mathbb{Z}/p^n\mathbb{Z},t)$ for some $n$ and $p$. Then by the CRT (\ref{Thm 5, Jan 9}) we conclude that $G$ is cyclic. WOLOG assume $G$ has $p$-power order. That is, $|G|=p^n$. If $G$ is not isomorphic to $\mathbb{Z}/p^n\mathbb{Z}$, then there exists $m<n$ such that every element is killed by $p^m$. Then every element of $G$ is a root of $T^{p^m}-1$. But by \ref{Cor 1, Jan 18}, $T^{p^m}-1$ has at most $p^m$ distinct roots. Oops! This contradicts $|G|=p^n$.
 \end{proof}
 \noindent \textbf{Finite Fields}
-\begin{fact}
+\begin{fact} \label{Fact 5, Feb 3}
 If $F$ is a finite field, then its characteristic is $p>0$, and $|F|=p^n$ for some integer $n$.
 \end{fact}
 \begin{proof}
-Since $F$ is finite, the canonical morphisms $\mathbb{Z}\longrightarrow F$ (Fact 0, Jan 4) cannot be injective. Hence the character of $F=p>0$. The image of this morphism is $\mathbb{F}_p$. $F$ is a vector space over $\mathbb{F}_p$, thus $|F|=p^n$ where $n$ is the dimension of this vector space.
+Since $F$ is finite, the canonical morphisms $\mathbb{Z}\longrightarrow F$ (\ref{Fact 7, Jan 4}) cannot be injective. Hence the character of $F=p>0$. The image of this morphism is $\mathbb{F}_p$. $F$ is a vector space over $\mathbb{F}_p$, thus $|F|=p^n$ where $n$ is the dimension of this vector space.
 \end{proof}
-\begin{prop}
+\begin{prop} \label{Prop 6, Feb 3}
 If $P$ is a prime, $n\in\mathbb{N}$, then there exists a finite field with $p^n$ elements.
 \end{prop}
-\begin{proof} Let $\bar{\mathbb{F}_p}$ be an algebraic closure of $\mathbb{F}_p$ (corollary 3). Consider the map $\sigma:\mathbb{F}_p\longrightarrow\bar{\mathbb{F}_p}$ defined by $x\longrightarrow x^{p^n}$. By hwk this is a ring homomorphism. Let $F\subset\bar{\mathbb{F}_p}$ be the subfield of elements fixed by $\sigma$. The elements of $F$ are precisely the roots of $T^{p^n}-T$. In $\bar{\mathbb{F}_p}$, this polynomial has $p^n$ many roots, counted with multiplicity. In order to have multiplicity 1, we need to check that the derivation of $P(T)=T^{p^n}-1$ is nonzero on these roots. $P'(T)=p^nT^{p^n-1}-1=-1\ne 0$ in $\bar{\mathbb{F}_p}$ which implies that all zeros have multiplicity 1, hence $|F|=p^n$.
+\begin{proof} Let $\bar{\mathbb{F}_p}$ be an algebraic closure of $\mathbb{F}_p$ (\ref{Cor 3, Feb 3}). Consider the map $\sigma:\mathbb{F}_p\longrightarrow\bar{\mathbb{F}_p}$ defined by $x\longrightarrow x^{p^n}$. By hwk this is a ring homomorphism. Let $F\subset\bar{\mathbb{F}_p}$ be the subfield of elements fixed by $\sigma$. The elements of $F$ are precisely the roots of $T^{p^n}-T$. In $\bar{\mathbb{F}_p}$, this polynomial has $p^n$ many roots, counted with multiplicity. In order to have multiplicity 1, we need to check that the derivation of $P(T)=T^{p^n}-1$ is nonzero on these roots. $P'(T)=p^nT^{p^n-1}-1=-1\ne 0$ in $\bar{\mathbb{F}_p}$ which implies that all zeros have multiplicity 1, hence $|F|=p^n$.
 \end{proof}
-\begin{prop}
+\begin{prop} \label{Prop 7, Feb 3}
 Let $F_1,F_2$ be finite fields of the same size. Then there exists an isomorphism from $F_1$ to $F_2$.
 \end{prop}
 \begin{proof}
-Any $a\in F_n$ is algebraic over $\mathbb{F}_p$ and if $M_a\in \mathbb{F}_p(T)$, then $\mathbb{F}_p(a)$ is isomorphic to $\mathbb{F}_p[T]/(M_a)$.We have $[\mathbb{F}_p(a):\mathbb{F}_p]=\deg(M_a)$ by prop 1, Jan 27. On the other hand, $|F_1^{\times}|=p^n-1\longrightarrow a^{p^n}=a$ for all $a\in F_1$ which implies that $F_1$ consists of roots of $P(T)=T^{p^n}-T$ and $P(T)$ has precisely $p^n$ roots, $F_1$ consists precisely of the zero's of $P(T)$. In particular $P(T)$ factors into linear factors over $F_1$.
-Thus the $M_a$ ($a\in F_i)$ are precisely the irreducible factors of $T^{p^n}-T=P(T)$. Now $F_1=\mathbb{F}_p(a)\iff |F_1|=p^n=|\mathbb{F}_p(a)|\iff n=\deg M_a$ in which case $f_1$ is isomorphic to $\mathbb{F}_p[T]/(M_a).$ By prop 4 we know that such an $a$ exists. Thus $F_1$ is isomorphic to $\mathbb{F}_p[T]/(Q)$ where $Q$ is any irreducible factor of $P(T)$ of deg $n$. Since the right hand side is independent of $F_1$ (just depends on $|F_1|$) we have $F_1$ is isomorphic to $F_2$.
+Any $a\in F_n$ is algebraic over $\mathbb{F}_p$ and if $M_a\in \mathbb{F}_p(T)$, then $\mathbb{F}_p(a)$ is isomorphic to $\mathbb{F}_p[T]/(M_a)$.We have $[\mathbb{F}_p(a):\mathbb{F}_p]=\deg(M_a)$ by \ref{Prop 1, Jan 30}. On the other hand, $|F_1^{\times}|=p^n-1\longrightarrow a^{p^n}=a$ for all $a\in F_1$ which implies that $F_1$ consists of roots of $P(T)=T^{p^n}-T$ and $P(T)$ has precisely $p^n$ roots, $F_1$ consists precisely of the zero's of $P(T)$. In particular $P(T)$ factors into linear factors over $F_1$.
+Thus the $M_a$ ($a\in F_i)$ are precisely the irreducible factors of $T^{p^n}-T=P(T)$. Now $F_1=\mathbb{F}_p(a)\iff |F_1|=p^n=|\mathbb{F}_p(a)|\iff n=\deg M_a$ in which case $f_1$ is isomorphic to $\mathbb{F}_p[T]/(M_a).$ By \ref{Prop 4, Feb 3} we know that such an $a$ exists. Thus $F_1$ is isomorphic to $\mathbb{F}_p[T]/(Q)$ where $Q$ is any irreducible factor of $P(T)$ of deg $n$. Since the right hand side is independent of $F_1$ (just depends on $|F_1|$) we have $F_1$ is isomorphic to $F_2$.
 \end{proof}
-\begin{cor}
-Let $F_1,F_2$ be finite fields. Then we can imbed $F_1$ into $F_2$ if and only if $|F_1|=p^k$ and $|F_2|=p^n$ with $k|n$. By proposition 6 and 7, $F_1$ is isomorphic to $\bar{\mathbb{F}_p}^{\sigma_1}$ and $F_2$ is isomorphic to $\bar{\mathbb{F}_p}^{\sigma_2},$ and $\sigma_1(x)=x^{p^k}$ and $\sigma_2(x)=x^{p^n}$ if $k|n$ then $F_1\subset F_2$. If $F_1$ imbeds into $F_2$ then $F_2$ is a vector space over $F_!$ and hence $|F_2|$ is a power of $|F_1|$ and so $k|n$.
+\begin{cor} \label{Cor 8, Feb 3}
+Let $F_1,F_2$ be finite fields. Then we can imbed $F_1$ into $F_2$ if and only if $|F_1|=p^k$ and $|F_2|=p^n$ with $k|n$. By proposition \ref{Prop 6, Feb 3} and \ref{Prop 7, Feb 3}, $F_1$ is isomorphic to $\bar{\mathbb{F}_p}^{\sigma_1}$ and $F_2$ is isomorphic to $\bar{\mathbb{F}_p}^{\sigma_2},$ and $\sigma_1(x)=x^{p^k}$ and $\sigma_2(x)=x^{p^n}$ if $k|n$ then $F_1\subset F_2$. If $F_1$ imbeds into $F_2$ then $F_2$ is a vector space over $F_!$ and hence $|F_2|$ is a power of $|F_1|$ and so $k|n$.
 \end{cor}

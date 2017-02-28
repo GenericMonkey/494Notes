@@ -1,0 +1,78 @@
+\section{February 22, 2017} % -Pranav
+\begin{thm} \label{Thm 1, Feb 22}
+    Let $L / K$ be a finite Galois extension, $\gal(L/K) = \{\sigma_1, \sigma_2 \dots \sigma_n\}$
+    There exists $a \in L$ such that $\{\sigma_1(a), \sigma_2(a), \dots \sigma_n(a) \}$
+    is a basis of the $K$- vector space $L$.
+\end{thm}
+\begin{rmk}
+    The $G$-representation $L$ is isomorphic t the regular representation $K[G]$.
+\end{rmk}
+\begin{proof}
+We consider 2 cases on the size of $K$. \\
+Case 1: $K$ is infinite. By \ref{Lemma 4, Feb 20}, we are looking for $a \in L$ such that
+$$
+A = (\sigma_i^{-1}\sigma_j(a))_{i,j} \textrm{ is inveritible}
+$$
+i.e. $\det(A) \neq 0$. Choose a basis $e_1, dots e_n$ of the $K$-vector space $L$.
+Thus, any $a \in L$ is of the form $a_1e_1 + \dots a_ne_n$ with $a_i \in K$.
+Thus, we have that
+$$
+A = \left(\sum_{k=1}^{n}{a_k\sigma_i^{-1}\sigma_j(e_n)}\right)_{i,j}
+$$
+Define $p(a_1, \dots a_n) = \det(A)$ for the above $A$. Then, $p \in L[T_1, \dots T_n]$.
+We claim that $p \neq 0$.
+\begin{proof}
+    (of claim.) By \ref{Lemma 4, Feb 20}, there exist $c_1 \dots c_n \in L$ such
+    that
+    $$
+    c_1\begin{bmatrix} \sigma_1(e_1) \\ \vdots \\ \sigma_n(e_1) \\ \end{bmatrix}
+    + \dots
+    +c_n\begin{bmatrix} \sigma_1(e_n) \\ \vdots \\ \sigma_n(e_n) \\ \end{bmatrix}
+    =
+    \begin{bmatrix} 1 \\ 0 \\ \vdots \end{bmatrix}
+    $$
+    Which means that
+    $$
+    \sum_{k=1}^{n}{c_k\sigma_i^{-1}\sigma_j(e_k)} =
+    \begin{cases}
+      1 & i = j\\
+      0 &  i \neq j \\
+   \end{cases}
+    $$
+    This gives us the associated matrix $A$ for the $c$ coefficients is the identity,
+    meaning that $p(c_1 \dots c_n) = \det(I_n) = 1$. As we have values for which $p$
+    is nonzero, we have that $p \neq 0$, as desired.
+\end{proof}
+Now, since $K$ is infinite, we can find values $a_1 \dots a_n \in K$ where
+$p(a_1, \dots a_n)$ is nonzero. This implies the associated determinant is nonzero,
+so we have values that give us the desired matrix being invertible, as desired. Thus,
+we have $a_1e_1 + \dots a_ne_n$ being the value $a \in L$ that we are looking for. \\
+Case 2: $K$ is finite. Then, $\gal = \{1, \sigma, \sigma^2, \dots \sigma^{n-1}\}$
+where $\sigma = \frob_q$ and $q = |K|$. These are all distinct, hence linearly
+independent over $L$ by \ref{Cor 3, Feb 20} hence over $K$. \\
+Thus, the minimal polynomial of $\sigma \in \End_{K-vs}(L)$ has degree $n$
+(it can't be $< n$ as $1, \sigma, \dots \sigma^{n-1}$ are linearly independent, and it is
+$\leq n$ as the characteristic polynomial is degree $n$). Thus, the minimal polynomial
+is the characteristic polynomial. \\
+Thus, the $K$-vector space $L$ has a cyclic vector.
+\end{proof}
+\noindent \textbf{Cyclotomic Extensions of $\QQ$}
+\begin{defn} \label{Defn 2, Feb 22}
+    $\mu_n = \{z \in \CC \mid z^n = 1 \}$
+\end{defn}
+We define a homomorphism
+\begin{align*}
+    (\Zn n)^\times  &\longrightarrow \Aut(\mu_n) \\
+    a &\longmapsto (z \mapsto z^a)
+\end{align*}
+\begin{fact} \label{Fact 3, Feb 22}
+    The map defined above is an isomorphism.
+\end{fact}
+\begin{proof}
+    If $a,b in (\Zn n)^\times$, then $z^{ab} = (z^a)^b$ \\
+    \underline{Injective} $z^a = z^b \Leftrightarrow z^{a-b} = 1 \Leftrightarrow a - b \equiv 0 (n) \Leftrightarrow a \equiv b (n)$. \\
+    \underline{Surjective} Let $\varphi \in \Aut(\mu_n)$, and $\zeta = e^{\frac{2 \pi i}{n}} \in \mu_n$. Then,
+    $\varphi(\zeta) = \zeta^a$. Moreover, since $\varphi^{-1}(\zeta) = \zeta^b$ for some other $b$,
+    we have $\zeta = \varphi^{-1}(\varphi(\zeta)) = \zeta^{ab}$. Thus $ab - 1 \cong 0 (n)$, meaning
+    $ab \equiv 1 (n)$, so $a \in (\Zn n)^\times$.
+\end{proof}

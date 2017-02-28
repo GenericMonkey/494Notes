@@ -1,6 +1,6 @@
 \section{January 27, 2017}
 
-\begin{defn}
+\begin{defn} \label{Defn 1, Jan 27}
 \hspace{0.5cm}
 \begin{enumerate}
 \item[(i)] A \textit{morphism of fields} is a morphism of rings whose source and target are fields
@@ -13,11 +13,11 @@
 If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vector space. An extension $L/k$ is called \textit{finite} if $\dim_k(L) < \infty$. In this case define the \textit{degree} of $L/k$, denoted $[L : k] \stackrel{\text{def}}{=} \dim_k(L)$.\footnote{Debacker noted that the use of this notation, identical to the index of a subgroup, is because field extensions are in fact group-theoretic. When Galois groups are added to the notes, this will be discussed below.}
  \end{rmk}
 
-\begin{fact}
+\begin{fact} \label{Fact 2, Jan 27}
  If $k_1, k_2$ are subfields of $L$, $k_1 \cap k_2$ is a subfield.
 \end{fact}
 
-\begin{defn}
+\begin{defn} \label{Defn 3, Jan 27}
 \hspace{0.5cm}
 \begin{enumerate}
 \item[(i)] Every field has a smallest field, called the \textit{prime subfield}, equal to $\bigcap_{k \subset L} k^{\text{field}}$, the intersection of all subfields of $L$. \\
@@ -26,26 +26,26 @@ If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vec
 \end{enumerate}
 \end{defn}
 
-\begin{prop}\label{prop:domtoField}
+\begin{prop}\label{Prop 4, Jan 27}
 Let $L$ be a ring and $k \subset L$ a subfield. If $L$ is a domain and $\dim_k(L) < \infty$ then $L$ is a field.
 \end{prop}
 \begin{proof}
 Let $0 \neq a \in L$. The map $a \cdot \colon L \rightarrow L$ that sends $x$ to $ax$ is $k$-linear, and since $L$ is a domain, injective: if $ax = 0$ then since $a \neq 0$, $x = 0$. By rank-nullity, the dimension of the image of $a \cdot$ must be equal to that of the target, i.e. $a \cdot$ is surjective. Thus there exists $G \in L$ so that $aG = 1$, implying that, as desired, $L$ is a field.
 \end{proof}
 
-\begin{defn}
+\begin{defn} \label{Defn 5, Jan 27}
 Let $L/k$ be an extension, $L \supset E, F \supset k$ intermediate fields, each finite over $k$. The \textit{composite of E and F} is
 \[E \cdot F = \left\{ \sum_{i = 1}^n e_i \cdot f_i \colon n \in \NN, e_i \in E, f_i \in F \right\}.\]
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{Prop 6, Jan 27}
 $EF$ is a field extension of $k$. It is finite and $[EF : k] \leq [E : k] \cdot [F : k]$.
 \end{prop}
 \begin{proof}
-It is clear that $EF$ is a subring of $L$ containing $k$. Let $\{e_1, ..., e_n\}$ and $\{f_1, ..., f_m\}$ be, respectively, bases for $E/k$ and $F/k$. Then the set $\{e_i \cdot f_j \colon i \in \{1, ..., n\}, j \in \{1, ..., m\}\}$ spans the $k$-vector space $EF$. Thus by elementary results, $\dim_k(EF) \leq \#\{e_i \cdot f_j\} = [E : k] \cdot [F : k]$. In particular, $[EF : k] < \infty$. Applying \textbf{Proposition 1.4} above, we have that $EF$ is a field.
+It is clear that $EF$ is a subring of $L$ containing $k$. Let $\{e_1, ..., e_n\}$ and $\{f_1, ..., f_m\}$ be, respectively, bases for $E/k$ and $F/k$. Then the set $\{e_i \cdot f_j \colon i \in \{1, ..., n\}, j \in \{1, ..., m\}\}$ spans the $k$-vector space $EF$. Thus by elementary results, $\dim_k(EF) \leq \#\{e_i \cdot f_j\} = [E : k] \cdot [F : k]$. In particular, $[EF : k] < \infty$. Applying \ref{Prop 4, Jan 27} above, we have that $EF$ is a field.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{Prop 7, Jan 27}
 Let $L/k$ be a finite extension, $V$ a finite dimensional $L$-vector space. Then $V$ is finite dimensional as a $k$-vector space, with $\dim_k(V) = \dim_L(V) \cdot [L : k]$.
 \end{prop}
 \begin{proof}
@@ -56,17 +56,17 @@ Let $\{v_1, ..., v_n\}$ be a basis for $V$ over $L$, $\{\ell_1, ..., \ell_m\}$ b
 \end{enumerate}
 \end{proof}
 
-\begin{cor}\label{cor:prodExt}
+\begin{cor}\label{Cor 8, Jan 27}
 If $M/L/k$ is a tower of finite extensions, then $[M : k] = [M : L] \cdot [L : k]$.
 \end{cor}
 
-\begin{defn}
+\begin{defn} \label{Defn 9, Jan 27}
 Let $L/k$ be an extension, and $a \in L$. If there is $0 \neq p \in k[T]$ such that $p(a) = 0$, then $a$ is \textit{algebraic over $k$}. Otherwise, $a$ is \textit{transcendental over $k$}.
 \end{defn}
 
 As per the above definitions, we would like to study the following construction: let $\text{ev} \colon k[T] \rightarrow L$, $p \mapsto p(a)$ be the evaluation morphism. If $a$ is transcendental, ev is injective. Further, since $L$ is a field, we have that ev factors uniquely through the fraction field $k(T)$\footnote{This notation was established on homework: $k(T)$ is the set of rational functions with coefficients in $k$.} and induces an isomorphism $k(T) \stackrel{\sim}{\rightarrow} k(a)$. If $a$ is algebraic, let $0 \neq I \subset k[T]$ be the kernel of ev. Since $k[T]$ is a Euclidean domain, hence a PID (see a proposition from Jan. 20), so there exists a unique monic polynomial $p \in k[T]$ such that $(p) = I$.
 
-\begin{defn}
+\begin{defn} \label{Defn 10, Jan 27}
 $p$ is called the \textit{minimal polynomial} of $a$ over $k$, $a/k$, written $M_{a/k}$. $deg(a/k) := \deg(M_{a/k})$ is its \textit{degree}.
 \end{defn}
 

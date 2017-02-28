@@ -1,5 +1,5 @@
 \section{January 20, 2017}
-\begin{prop}
+\begin{prop} \label{Prop 1, Jan 20}
     Let $R$ be a domain with factorization. Then $R$ has unique factorization if and
     only if every irreducible element is prime.
 \end{prop}
@@ -29,7 +29,7 @@
     are simply a permutation of each other, while the last is simply a unit scaling
     away from the other. Thus, these are the same factorization.
 \end{proof}
-\begin{defn}
+\begin{defn} \label{Defn 2, Jan 20}
     A ring is called \textbf{principal}, if every ideal is principal. If,
     in addition, the ring is a domain, it is a \textbf{Prinicipal Ideal Domain}, or
     \textbf{PID}.
@@ -38,7 +38,7 @@
     $\ZZ$ is a PID. $\Zn n$ are principal, any field is a PID. Quotients and products
     of principal rings are principals.
 \end{ex}
-\begin{thm}
+\begin{thm} \label{Thm 3, Jan 20}
     Every PID is a UFD
 \end{thm}
 \begin{proof}
@@ -74,7 +74,7 @@
     this equality by $b$, we have that $b = b\alpha u + \beta (ab)$. Now, since $u \mid ab$
     and $u \mid u$, $u \mid b$, as desired.
 \end{proof}
-\begin{defn}
+\begin{defn} \label{Defn 4, Jan 20}
     A \textbf{Euclidean Domain} is a pair $(R, H)$, where $R$ is a domain, and
     $H: R \setminus \{0\} \rightarrow \NN$ is a function such that
     \begin{enumerate}
@@ -89,7 +89,7 @@
 \begin{ex}
     If $F$ is a field, then $(F[T], deg)$ is a Euclidean domain.
 \end{ex}
-\begin{prop}
+\begin{prop} \label{Prop 5, Jan 20}
     Every Euclidean domain is a PID.
 \end{prop}
 \begin{proof}
@@ -99,10 +99,10 @@
     contradicting the minimality of $d$. Thus $r = 0$, and $a = qd$. Thus,
     every ideal is of the form $(d)$, showing it is principal.
 \end{proof}
-\begin{cor}
+\begin{cor} \label{Cor 6, Jan 20}
     If $F$ is a field, $F[T]$ is a PID, and hence a UFD.
 \end{cor}
-\begin{defn}
+\begin{defn} \label{Defn 7, Jan 20}
     Let $R$ be a UFD. We call $0 \neq P \in R[T]$ \textbf{primitive} if $a \in R$
     with $a \mid P$ means that $a \in R^\times$.
 \end{defn}
@@ -110,14 +110,14 @@
     This is equivalent to no irreducible $p \in R$ divides all the coefficients of
     $P$. Intuitively, we can say the ``gcd'' of the coefficients of $P$ is 1.
 \end{rmk}
-\begin{lemma}
+\begin{lemma} \label{Lemma 8, Jan 20}
     \textbf{(Gauss)} If $P,Q$ are primitive, so is $PQ$.
 \end{lemma}
 \begin{proof}
     Let $P \neq 0$, $Q \neq 0$ such that $PQ$ is not primitive. Let $p \in R$ prime
     such that $p \mid PQ$. Thus, $PQ$ becomes $0$ under the
     $R[T] \rightarrow (R/(p))[T]$. \\
-    But $R / (p)$ is a domain by \ref{thm:ideals}, and thus, by \ref{polyringdomain}, we have
+    But $R / (p)$ is a domain by \ref{Thm 8, Jan 6}, and thus, by \ref{Fact 6, Jan 11}, we have
     that $(R/(p))[T]$ is also a domain. Thus, we have that either $P$ or $Q$ is
     0 in $(R / (p))[T]$, meaning it is also divisible $p$, as desired.
 \end{proof}

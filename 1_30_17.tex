@@ -1,5 +1,5 @@
 \section{January 30, 2017}
-\begin{prop}
+\begin{prop} \label{Prop 1, Jan 30}
     Let $L / K$ be a field extension, $a \in L$ algebraic over $K$. Then,
     \begin{itemize}
         \item $M_{a,K} \in k[T]$ is irreducible
@@ -12,8 +12,8 @@
 \begin{proof}
     By definition of $M_{a/K}$ the evaluation $ev: k[T] \rightarrow L$ gives an
     injection from $K[T] / (M_{a/K}) \rightarrow K(a)$. Since $K(a)$ is a domain,
-    so is $K[T] / (M_{a/K})$. By \ref{thm:ideals}, this means $(M_{a/K})$ is prime.
-    this means that $M_{a/K}$ is prime, so $M_{a/K}$ is irreducible by \ref{fact:primeirred} \\
+    so is $K[T] / (M_{a/K})$. By \ref{Thm 8, Jan 6}, this means $(M_{a/K})$ is prime.
+    this means that $M_{a/K}$ is prime, so $M_{a/K}$ is irreducible by \ref{Fact 8, Jan 18} \\
     Now we show the images of $1, \dots T^{n-1}$ in $K[T] / (M_{a/K})$ generate the space.
     (Pranav Exclusive) It is enough to show that they generate $T^n$, as for any higher
     dimensional coset, by division algorithm we can reduce to a coset of $(M_{a/K})$ with
@@ -24,13 +24,13 @@
     in $(M_{a,k})$ as it is in the kernel of the quotient map. We thus have that
     $M_{a,k} \mid Q$. This contradicts that $\deg(Q) < \deg(M_{a,k})$ \\
     Now we know that $K[T] / (M_{a,K})$ is a domain, containing $K$ and is finite
-    dimensional over $K$, so by \ref{prop:domtoField}, $K[T] / (M_{a,k})$ is a field.
+    dimensional over $K$, so by \ref{Prop 4, Jan 27}, $K[T] / (M_{a,k})$ is a field.
     This implies that $K[T] / (M_{a/K}) \rightarrow K(a)$ is surjective as the image
     in $K(a)$ is now a field that contains $K$ and $a$ and because $K(a)$ is the smallest
     such field.
 \end{proof}
 
-\begin{prop}\label{prop:algExt}
+\begin{prop}\label{Prop 2, Jan 30}
     Let $L / K$ be an extension, $a \in L$. The following are equivalent.
     \begin{enumerate}[i)]
         \item $a$ is algebraic over $K$
@@ -39,7 +39,7 @@
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    i) $\Rightarrow$ ii): This comes from the above proposition, final condition. \\
+    i) $\Rightarrow$ ii): This comes from the above proposition (\ref{Prop 1, Jan 30}), final condition. \\
     ii) $\Rightarrow$ iii): Just let $E$ be $K(a)$. \\
     iii) $\Rightarrow$ i): Since $E / K$ is finite, the set of powers $1,a,a^2 \dots$ cannot
     be linearly independent over $K$. Thus, there are $n \in \NN$ and $b_0, b_{1}, \dots b_{n} \in K$
@@ -47,7 +47,7 @@
     so $a$ is algebraic over $K$, as desired.
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{Cor 3, Jan 30}
     Let $L / K$ be an extension, $a,b \in L$ algebraic over $K$. Then
     \begin{itemize}
         \item $a + b$, $a \cdot b$ are algebraic over $K$. $\deg(a + b), (a \cdot b) \leq \deg(a)
@@ -57,22 +57,22 @@
 \end{cor}
 
 \begin{proof}
-    By above proposition, $K(a)$ and $K(b)$ are finite over $K$. \\
+    By above proposition (\ref{Prop 2, Jan 30}), $K(a)$ and $K(b)$ are finite over $K$. \\
     Now, $a + b, a \cdot b \in K(a)\cdot K(b)$ and $[K(a) \cot K(b) : K] \leq [K(a) : K]
     \cdot [K(b): K]$. \\
-    By (FIXME) $a + b$, and $a \cdot b$ are algebraic over $K$. Note that $a^{-1} \in K(a)$
+    By \ref{Prop 6, Jan 27} $a + b$, and $a \cdot b$ are algebraic over $K$. Note that $a^{-1} \in K(a)$
     so $K(a^{-1}) = K(a)$
 \end{proof}
-\begin{defn}
+\begin{defn} \label{Defn 5, Jan 30}
     An extension $L / K$ is called \textbf{algebraic}, if all $a \in L$ are algebraic
     over $K$.
 \end{defn}
-\begin{cor}
+\begin{cor} \label{Cor 6, Jan 30}
     If $L / K$ is finite, then it is algebraic, and $\deg(a,K) \mid [L:K]$, for
     any $a \in L$.
 \end{cor}
 \begin{proof}
-    \ref{prop:algExt} and \ref{cor:prodExt} 
+    \ref{Prop 2, Jan 30} and \ref{Cor 8, Jan 27}
 \end{proof}
 
 \begin{rmk}

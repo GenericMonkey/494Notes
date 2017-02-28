@@ -1,0 +1,61 @@
+\section{February 24, 2017}
+
+We let $M_n=\{z\in\CC^{\times}|z^n=1\}$ and
+$$(\ZZ/n\ZZ)^{\times}\longrightarrow \Aut(M_n)$$ defined by
+$$a\longrightarrow (z\longrightarrow z^a).$$
+
+\begin{fact} \label{Fact 1, Feb 24}
+The following are equivalent:
+(1) $|\{d\in \NN |1\leq d\leq n,(d,n)=1\}$
+(2) $|\{\text{generators of }\Zn n\}|$
+(3) $(\Zn n)^{\times}$
+\end{fact}
+\begin{proof}
+$\text{ord}(d,\Zn n)=\text{lcm}(d,n)/d,$
+$$\text{ord}(d,\Zn n)=n\iff\text{lcm}(d,n)=nd\iff \text{gcd}(d,n)=1$$
+
+(1)$\iff$ (3) $d\in (\Zn n)^{\times}\iff \exists e=d^{-1}\in (\Zn n )^{\times}$
+$$n|ed-1\iff\exists k\in \ZZ :ed=1+nk$$
+
+Then $d\in(\Zn n)^{\times}\longrightarrow d$ and $n$ have no common divisors if and only if $(d,n)=1$. If $(d,n)=1\longrightarrow \exists a,b\in \ZZ :ad+bn=1\iff ad\equiv 1\mod n.$
+\end{proof}
+\begin{def} \label{Def 2, Feb 24}
+$\phi(n)=|(\Zn n)^{\times}|$, the Euler $\phi$ function.
+\end{def}
+\begin{fact} \label{Fact 3, Feb 24}
+(i) If $n,m$ are coprime, then $\phi(n,m)=\phi(n)\phi(m).$
+(ii) If $p$ is prime, $\phi(p^r)=p^{r-1}(p-1).$
+(iii) $\sum_{d|n}\phi(d)=n$.
+\end{fact}
+\begin{proof}
+(i) By the Chinese Remainder Theorem (\ref{Thm 5, Jan 9}), we have isomorphisms
+$$ \Zn {nm} \cong \Zn m \times \Zn n$$
+of rings, hence also an isomorphism of unit groups
+$$(\Zn {nm})^{\times}\cong (\Zn m \times \Zn n)^{\times}\cong(\Zn n)^{\times}\times(\Zn m)^{\times}.$$
+(ii) $a\in \ZZ$ is not coprime to $p^r$ if and only if $p|a$. There are exactly $p^{r-1}$-many multiplies of $p$ between $1$ and $p^r$. Thus $\phi(p^r)=p^r-p^{r-1}=p^{r-1}(p-1)$.
+(iii) Let $d|n.$ Then $\Zn d$ injects into $\Zn n$ defined by $x\longrightarrow n/d\cdot x$ with image $\{y\in \Zn n|dy=0\}.$ Thus $\phi(d)=|\{y\in \Zn n|ord(y)=d\}.$
+\end{proof}
+Recall: $\Phi_n(T)=\Pi_{S\in M_n,\text{ord}(S)=n}(T-S)\in \ZZ[T]\subset \CC[T].$
+\begin{prop} \label{Prop 4, Feb 24}
+$\Phi_n$ is irreducible in $\QQ[T]$.
+\end{prop}
+\begin{proof}
+Assume not. Write $\Phi_n=f\cdot g(\text{non-constant}),f\cdot g\in \CC[T]$. After rescaling we may assume $f\in \ZZ[T]$ is primitive. Then $g\in \ZZ[T]$, see \ref{Lemma 4, Jan 23}.
+\begin{claim}
+If $f(S)=0$ and $p$ does not divide $n$ is prime, then $f(S^p)=0$.
+\end{claim}
+\begin{proof}
+Assume not. Then from $\Phi_n(S^p)=0$ we get that $g(S^p)=0$. Thus $S$ is a 0 of $g(T^p)$. Then $f$ and $G(T^p)$ have a non-trivial gcd in $\CC[T],$ hence by PS4P9 also in $\QQ[T]$. Since $f$ is irreducible, we have $f|g(T^p)$. Since $f$ is primitive, get $f|g(T^p)$ in $\ZZ[T]$ by \ref{Lemma 4, Jan 23}. Let $\bar{f},\bar{g}$ be the images of $f,g$ in $\FF_p[T]$. Then $\bar{f}|\bar{g}(T^p)$. But $\bar{g}(T^p)=\bar{g}^p$. So $\bar{f}|\bar{g}^p$. Thus $\bar{f}$ and $\bar{g}$ have a common divisor. Thus $\bar{f}$ and $\bar{g}$ have a common zero in $\bar{\FF}_p$ so $\bar{\Phi_n}$ has a multiple zero in $\bar{\FF_p}$, which is impossible by PS4P10. So $x^n-1$ will have a multiple 0 in $\bar{\FF}_p$.
+\end{proof}
+Admitting this, choose any $S\in M_n, f(S)=0$. For any other $S'\in M_n$, ord$(S')=n$. There is $a\in \ZZ$, $(a,n)=1, S'=S^a$. Apply claim to prime decomposition of $a$ to conclude $f(S')=0$. Thus $f=\Phi_n$.
+\end{proof}
+\begin{defn}
+The $n^\textrm{th}$ cyclotomic extension of $\QQ$ is $\QQ(M_n)$.
+\end{defn}
+\begin{prop} \label{Prop 6, Feb 24}
+The map $(\Zn n)^{\times}\longrightarrow\text{Gal}(Q(M_n)/Q),a\longrightarrow (z\longrightarrow z^a)$ is an isomorphism. In particular, $[Q(M_n):Q]=\phi(n)$.
+\end{prop}
+\begin{proof}
+Enough, by \ref{Fact 3, Feb 24}, to show that the restriction map Gal$(Q/M_n)/Q)\longrightarrow Aut(M_n)$ defined by $\sigma\longrightarrow \sigma|_{M_n}(M_n< \CC/M_n)^{\times}$ preserves $M_n$, so this map is well-defined. Let $S\in M_n$ have order $n$. Then $Q(M_n)=Q(S)$ by \ref{Prop 4, Feb 6}, and $M_{S/a}=\Phi_n$ by \ref{Prop 4, Feb 24}. So,
+$${Gal}(Q(S)/Q)\cong \{z\in Q(S)|\Phi_n(S)=0\}=\{z\in M_n|\text{ord}(z)=n\}.$$
+\end{proof}

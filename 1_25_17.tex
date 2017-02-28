@@ -1,38 +1,38 @@
 \section{January 25, 2017}
 
-\begin{prop}
+\begin{prop} \label{Prop 1, Jan 25}
 (Eisenstein Criterion) Let $R$ be a UFD, $F$ its fraction field (as before). Let $P(T)=a_nT^n+\ldots+a_0\in R[T]$. If $p\in R$ prime such that $p$ does not divide $a_n$, then $p|a_{n-1},\ldots,a_0$ and $p^2$ does not divide $p_0$ then $P$ is irreducible in $F[T]$.
 \end{prop}
 \begin{proof}
 Suppose not. By Thm 2 last time we have that $P$ is not irreducible in $R[T]\Longrightarrow P=Q\cdot S$ where $Q,S\in R[T].$ Let $\bar{P},\bar{Q},\bar{S}$ be images in $(R/(P))[T]$. Write $Q(T)=b_mT^m+\ldots+b_0, S(T)=c_jT^j+\ldots+c_0$. Then $\bar{P}(T)(=\bar{a_n}T^n)=Q(T)(=\bar{b_k}T^k)\cdot \bar{S}(T)(=\bar{c_j}T^j)$ with $k+j=n$ since $R/(P)$ is a domain since $P$ is prime). Then $p|b_0,p|c_0\Longrightarrow p^2|a_0=b_0c_0$ which is a contradiction.
 \end{proof}
-Cyclotomic Polynomials:
-\begin{defn}
-For $n\in\bold{N}$, the $n$th cyclotomic polynomial is $\Phi_n(T)=\Pi_{gcd(k,n)=1,k=1}^n(T-e^{2\pi ik/n})$.
+\noindent \textbf{Cyclotomic Polynomials:}
+\begin{defn} \label{Defn 2, Jan 25}
+For $n\in \NN$, the $n$th cyclotomic polynomial is $\Phi_n(T)=\Pi_{gcd(k,n)=1,k=1}^n(T-e^{2\pi ik/n})$.
 \end{defn}
-\begin{prop}
+\begin{prop} \label{Prop 3, Jan 25}
 $\Phi$ is monic and has integer coefficients.
 \end{prop}
 \begin{proof}
-Induction on $n\in\bold{N}$.
+Induction on $n\in \NN$.
 
 $n=1: T-1,n=2: T+1$
 
 $k<n\Longrightarrow k=n:T^n-1=\Pi_{k=1}^n(T-e^{2\pi ik/n})=$
-$\Pi_{d|n}\Phi_d(T)$. By induction, $\Phi_d\in\bold{Z}[T]$ and monic for $d|n, d\ne n$. In particular, these $\Phi_d$ are primitive, so Gauss' lemma implies that $\Pi_{d|n,d\ne n}\Phi_d=:P$ is primitive. $T^n-1=\Phi_n(T)\cdot P(T)$ in $\bold{C}[T]$. So $P|T^n-1$ in $\bold{C}[T]\Longrightarrow P|T^n-1$ in $\bold{Q}[T]$. By lemma 4 of January 23, $P|T^n-1$ in $\bold{Z}[T]$.
+$\Pi_{d|n}\Phi_d(T)$. By induction, $\Phi_d\in \ZZ[T]$ and monic for $d|n, d\ne n$. In particular, these $\Phi_d$ are primitive, so Gauss lemma (\ref{Lemma 8, Jan 20}) implies that $\Pi_{d|n,d\ne n}\Phi_d=:P$ is primitive. $T^n-1=\Phi_n(T)\cdot P(T)$ in $\CC[T]$. So $P|T^n-1$ in $\CC[T]\Longrightarrow P|T^n-1$ in $\QQ[T]$. By \ref{Lemma 4, Jan 23}, $P|T^n-1$ in $\ZZ[T]$.
 \end{proof}
-\begin{prop}
-If $p\in\bold{N}$ prime, then $\Phi_p$ is irreducible.
+\begin{prop} \label{Prop 4, Jan 25}
+If $p\in \NN$ prime, then $\Phi_p$ is irreducible.
 \end{prop}
 \begin{proof}
-$T^p-1=\Phi_1\cdot \Phi_p=(T-1)\cdot\Phi_p$ and $T^p-1=(T-1)(T^{p-1}+T^{p-2}+\ldots+1)\Longrightarrow \Phi_p=T^{p-1}+\ldots+1.$ Reduce mod $p$: $(T-1)\bar{\Phi_p}(T)=T^p-1=(T-1)^p$ implies that $\bar{\Phi_p}(T)=(T-1)^{p-1}$. Consider the isomorphism $\bold{Z}[T]\longrightarrow \bold{Z}[T]$ defined by $T\longrightarrow T+1$. Let $Q$ be image of $\Phi_p$. Then $\Phi_p$ irreducible if and only if $Q$ is irreducible. But $\bar{Q}(T)=\bar{\Phi}_p(T+1)=T^{p-1}$. Thus if $Q(T)=a_{p-1}T^{p-1}+\ldots+a_0$, $p$ does not divide $a_{p-1},p|a_{p-2},\ldots,a_0$. But $a_0=Q(0)=\Phi_p(1)=p$. Apply Prop 1.
+$T^p-1=\Phi_1\cdot \Phi_p=(T-1)\cdot\Phi_p$ and $T^p-1=(T-1)(T^{p-1}+T^{p-2}+\ldots+1)\Longrightarrow \Phi_p=T^{p-1}+\ldots+1.$ Reduce mod $p$: $(T-1)\bar{\Phi_p}(T)=T^p-1=(T-1)^p$ implies that $\bar{\Phi_p}(T)=(T-1)^{p-1}$. Consider the isomorphism $\ZZ[T]\longrightarrow \ZZ[T]$ defined by $T\longrightarrow T+1$. Let $Q$ be image of $\Phi_p$. Then $\Phi_p$ irreducible if and only if $Q$ is irreducible. But $\bar{Q}(T)=\bar{\Phi}_p(T+1)=T^{p-1}$. Thus if $Q(T)=a_{p-1}T^{p-1}+\ldots+a_0$, $p$ does not divide $a_{p-1},p|a_{p-2},\ldots,a_0$. But $a_0=Q(0)=\Phi_p(1)=p$. Apply Eisenstein (\ref{Prop 1, Jan 25}).
 \end{proof}
 Adjoining Elements:
 
 Let $R$ be a ring. We want to add a new element $s$, subject to some relation $a_ns^n+\ldots+a_n=0$ for $a_i\in R$. More precisely, we want a ring $S$, a morphism $R\longrightarrow S$, an element $s\in S$ satisfying the relation, such that $(T,t)$ another such pair then there exists a unique morphism $S\longrightarrow T,s\longrightarrow t$.
 
-Set $P\in R[T], P(T)=a_nT^n+\ldots+a_0, S=R[T]/(P),$ $s=$ image of $T$ in $S$. Note that $P(S)\in S$, if we think of $P\in (R[T])[T]$ (with ``constant" coefficients), $P(T)=P.$
-\begin{defn}
+Set $P\in R[T], P(T)=a_nT^n+\ldots+a_0, S=R[T]/(P),$ $s=$ image of $T$ in $S$. Note that $P(S)\in S$, if we think of $P\in (R[T])[T]$ (with ``constant'' coefficients), $P(T)=P.$
+\begin{defn}\label{Defn 5, Jan 25}
 Let $R$ be ring.
 
 (i) An $R$-algebra is a pair $(S,\phi), S$ ring, $\phi:R\longrightarrow S$ morphism (rmk: $\phi$ usually suppressed, $\phi(r)s=``rs"$).
@@ -43,5 +43,5 @@ Let $R$ be ring.
 $\psi$ need not be injective.
 \end{rmk}
 \begin{ex}
-$R[T]$ is an $R$-algebra, $R/I$ is an $R$-algebra, any ring is a $\bold{Z}$-algebra in a canonical way.
+$R[T]$ is an $R$-algebra, $R/I$ is an $R$-algebra, any ring is a $\ZZ$-algebra in a canonical way.
 \end{ex}

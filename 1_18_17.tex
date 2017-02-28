@@ -1,11 +1,11 @@
 \section{January 18, 2017}
-\begin{lemma}
-(This is Lemma 3 from Jan. 13) Given $P \in R[T], r \in R$, then $P(r) = 0 \Leftrightarrow (T - r) \mid P$.
-\end{lemma}
+\begin{unnumlemma}
+(This is Lemma 3 from Jan. 13) (\ref{Lemma 3, Jan 13}) Given $P \in R[T], r \in R$, then $P(r) = 0 \Leftrightarrow (T - r) \mid P$.
+\end{unnumlemma}
 
-\begin{prop}
-(This is Proposition 4 from Jan. 13) Given $P, D \in R[T]$ such that $D$ has a unit as a leading coefficient, there exists unique $Q, Z \in R[T]$ with $deg(Z) < deg(D)$ such that $P = DQ + Z$.
-\end{prop}
+\begin{unnumprop}
+(This is Proposition 4 from Jan. 13) (\ref{Prop 4, Jan 13}) Given $P, D \in R[T]$ such that $D$ has a unit as a leading coefficient, there exists unique $Q, Z \in R[T]$ with $deg(Z) < deg(D)$ such that $P = DQ + Z$.
+\end{unnumprop}
 
 \begin{proof}
 This proof rehashes the one given in class by Tasho to rectify any mistakes or lack of clarity in the one given on Jan. 13 (no offense Gitlin). Following the proof given on Jan. 13 (before the proof of uniqueness), we have the following string of inequalities:
@@ -13,31 +13,31 @@ This proof rehashes the one given in class by Tasho to rectify any mistakes or l
 This implies that $deg(Q - Q') = -\infty = deg(Z - Z')$, so $Q - Q' = Z - Z' = 0$, i.e. $Q = Q'$ and $Z = Z'$, completing the proof.
 \end{proof}
 
-The following is a proof Tasho gave of Lemma 3 from Jan. 13 which utilizes Proposition 4 from Jan. 13.
+The following is a proof Tasho gave of \ref{Lemma 3, Jan 13} which utilizes \ref{Prop 4, Jan 13}.
 \begin{proof}
-As per Proposition 4, write $P(T) = (T - r) \cdot Q(T) + Z(T)$ with $deg(Z) < deg(T - r) = 1 \Rightarrow Z \in R$. We have then $P(r) = (r - r) \cdot Q(r) + Z(r) = Z$, but since $P(r) = 0$ we have now $Z = 0 \Leftrightarrow (T - r) \mid P$.
+As per \ref{Prop 4, Jan 13}, write $P(T) = (T - r) \cdot Q(T) + Z(T)$ with $deg(Z) < deg(T - r) = 1 \Rightarrow Z \in R$. We have then $P(r) = (r - r) \cdot Q(r) + Z(r) = Z$, but since $P(r) = 0$ we have now $Z = 0 \Leftrightarrow (T - r) \mid P$.
 \end{proof}
-
-\begin{defn}
+\setcounter{thm}{-1}
+\begin{defn} \label{Defn 0, Jan 18}
 Let $P \in R[T], r \in R$. Define \textbf{the multiplicity of $r$ in $P$} by $\max\{n \in \NN \colon (T - r)^n \mid P\}$.
 \end{defn}
 
-\begin{cor}
+\begin{cor} \label{Cor 1, Jan 18}
 Let $R$ be a domain. Then $0 \neq P \in R[T]$ has at most $deg(P)$-many zeroes, counted with multiplicity.
 \end{cor}
 \begin{proof}
-We induct on $deg(P)$. As a base case take $deg(P) = 0$: $P \in R$ has no zeroes, as required. For an inductive step assume that the statement holds for all polynomials of degree less than $deg(P)$. If $P$ has no zeroes, we are done. Otherwise let $r \in R$ be a zero of $P$. By Lemma 3 from Jan. 13, $P = (T - r) \cdot Q(T)$ for some $Q \in R[T]$ with $deg(Q) < deg(P)$. By inductive hypothesis $Q$ has at most $deg(Q) = deg(P) - 1$ zeroes. Since $R$ is a domain, a zero of $P$ is either $r$ or a zero of $Q$, so $P$ has at most $deg(Q) + 1 = deg(P)$ zeroes, as required. This completes the inductive step, and thus the proof.
+We induct on $deg(P)$. As a base case take $deg(P) = 0$: $P \in R$ has no zeroes, as required. For an inductive step assume that the statement holds for all polynomials of degree less than $deg(P)$. If $P$ has no zeroes, we are done. Otherwise let $r \in R$ be a zero of $P$. By \ref{Lemma 3, Jan 13}, $P = (T - r) \cdot Q(T)$ for some $Q \in R[T]$ with $deg(Q) < deg(P)$. By inductive hypothesis $Q$ has at most $deg(Q) = deg(P) - 1$ zeroes. Since $R$ is a domain, a zero of $P$ is either $r$ or a zero of $Q$, so $P$ has at most $deg(Q) + 1 = deg(P)$ zeroes, as required. This completes the inductive step, and thus the proof.
 \end{proof}
-The following example answers the question ``does this fail when $R$ is not a domain?":
+The following example answers the question ``does this fail when $R$ is not a domain?'':
 \begin{ex}
 If $R = \ZZ / 6\ZZ$ and we define $P(T) = 3T$, then $\#\{ \text{zeroes of } P \} = \#\{0, 2\} > 1 = deg(P)$.
 \end{ex}
 
-\begin{defn}
+\begin{defn} \label{Defn 2, Jan 18}
 A field $k$ is called \textbf{algebraically closed} provided that every nonconstant $P \in k[T]$ has a zero.
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{Prop 3, Jan 18}
 Let $k$ be an algebraically closed field, $P \in k[T]$. Then
 \[P(T) = c \cdot (T - r_1)^{m_1} \cdots (T - r_n)^{m_n}\]
 for $c, r_1, ..., r_n \in k, m_1, ..., m_n \in \NN$.
@@ -47,21 +47,21 @@ for $c, r_1, ..., r_n \in k, m_1, ..., m_n \in \NN$.
 This is proved on Homework 2. (Future readers: feel free to input the proof here when completed.)
 \end{proof}
 
-\begin{defn}
+\begin{defn} \label{Defn 4, Jan 18}
 Define $\mathbf{R[T_1, ..., T_n]}$ recursively as $(R[T_1, ..., T_{n-1}])[T_n]$. More concretely: a \textbf{monomial} in $T_1, ..., T_n$ is an expression $T_1^{m_1} \cdots T_n^{m_n}$, for $m_i \in \NN$. A polynomial in $T_1, ..., T_n$ with coefficients in $R$ is an $R$-linear combination of monomials; the set of all polynomials in $T_1, ..., T_n$ is $R[T_1, ..., T_n]$.
 \end{defn}
 
 Recall: $P \in R[T] \leftrightarrow$ an eventually-zero sequence $(a_0, a_1, ...) \leftrightarrow$ a map $\NN \rightarrow R$ with finite support. So $P \in R[T_1, ..., T_n] \leftrightarrow$ a map $\NN^n \rightarrow R$ with finite support, so we may think of a polynomial $P \in R[T_1, ..., T_n]$ as
 \[P(T) = \sum_{c_i \in \NN} a_{c_1, ..., c_n} \cdot T_1^{c_1} \cdots T_n^{c_n}.\]
 
-\begin{fact}
+\begin{fact} \label{Fact 5, Jan 18}
 Given a ring morphism $\phi \colon R \rightarrow S, s_1, ..., s_n \in S$, there exists a unique ring morphism \[\phi_{s_1, ..., s_n} \colon R[T_1, ..., T_n] \rightarrow S\] such that $\phi_{s_1, ..., s_n}(r) = \phi(r)$ for $r \in R$, and $\phi_{s_1, ..., s_n}(T_i) = s_i$.
 \end{fact}
 \begin{proof}
-We induct on $n$. As a base case let $s \in S$. Fact 5.1, Jan. 13 above guarantees the existence of a unique morphism $\phi_s \colon R[T] \rightarrow S$ with the given properties. For an inductive case assume the statement holds for $n - 1$. By inductive hypothesis we have a unique morphism $\phi_{s_1, ..., s_{n-1}} \colon R[T] \rightarrow S$ satisfying the given properties. Applying the base case to $\phi_{s_1, ..., s_{n-1}}$ with $s = s_n$ gives the desired (unique) morphism, completing the inductive step and thus the proof.
+We induct on $n$. As a base case let $s \in S$. \ref{Fact 1, Jan 13} above guarantees the existence of a unique morphism $\phi_s \colon R[T] \rightarrow S$ with the given properties. For an inductive case assume the statement holds for $n - 1$. By inductive hypothesis we have a unique morphism $\phi_{s_1, ..., s_{n-1}} \colon R[T] \rightarrow S$ satisfying the given properties. Applying the base case to $\phi_{s_1, ..., s_{n-1}}$ with $s = s_n$ gives the desired (unique) morphism, completing the inductive step and thus the proof.
 \end{proof}
 
-\begin{defn} \hspace{0.5cm}
+\begin{defn} \label{Defn 6, Jan 18} \hspace{0.5cm}
 \begin{itemize}
 \item The image of $\phi_{s_1, ..., s_n}$ is called the \textbf{$R$-subalgebra of $S$ generated by $s_1, ..., s_n$}
 \item $s_1, ..., s_n$ are called \textbf{algebraically independent} provided that $\phi_{s_1, ..., s_n}$ is injective.
@@ -77,7 +77,7 @@ Taking preimages under $\phi_{s_1, ..., s_n}$ we have
 \end{align*}
 thus if there exists such a relation that is nontrivial, there is a nonzero element in $\ker(\phi_{s_1, ..., s_n})$, so it is not injective. (Note from Ben: this seems to assume that the coefficients $r_i$ are in the image of $\phi$, which is not generally true. Will bring up with Tasho and edit as necessary.)
 
-\begin{defn}
+\begin{defn} \label{Defn 7, Jan 18}
 Let $R$ be a ring, $0 \neq a \in R$ not a unit. \hspace{0.5cm}
 \begin{itemize}
 \item $a$ is called \textbf{irreducible} provided that $a = bc \Rightarrow b \in R^{\times}$ or $c \in R^{\times}$.
@@ -85,7 +85,7 @@ Let $R$ be a ring, $0 \neq a \in R$ not a unit. \hspace{0.5cm}
 \end{itemize}
 \end{defn}
 
-\begin{fact}\label{fact:primeirred}
+\begin{fact}\label{Fact 8, Jan 18}
 $R$ a domain $\Rightarrow$ every prime element of $R$ is irreducible.
 \end{fact}
 
@@ -101,7 +101,7 @@ Let $p \in R$ be prime and write $p = ab$. Then without loss of generality we ha
 \end{itemize}
 \end{rmk}
 
-\begin{defn}
+\begin{defn} \label{Defn 9, Jan 18}
 Let $R$ be a domain. \hspace{0.5cm}
 \begin{enumerate}
 \item $R$ \textbf{has factorization} provided that every $0 \neq r \in R$ can be written $\epsilon \cdot u_1 \cdots u_k$ with $\epsilon \in R^{\times}$ and $u_i \in R$ irreducible.

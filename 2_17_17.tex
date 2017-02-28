@@ -1,0 +1,54 @@
+\section{February 17, 2017}
+
+Recall:
+$E/F$ finite extension is Galois. Then $$|\text{Aut}(E/F)|=[E:F]\iff$$
+$$\text{it's normal and separable}\iff$$
+$$E^{\text{Aut}(E/F)}=F\iff$$
+$$M_{a/F}(T)=\Pi_{b\in Ga}(T-b)=Q, Q|M_{a/F},M_{a/F}\ \text{is irreducible}$$ by \ref{Prop 1, Jan 30}.
+Every $b\in Ga$ is a zero of $M_{a/F}:b=\sigma(a),\sigma\in G$ is a zero of $\sigma(M_{a/F})=M_{a/F}$. We call $\FF_p(T)=K,\FF_p(T^p)=L$. We have that $M_{T/K}(X)=X^p-T^p$, $M_{T/K}|X^p-T^p\longrightarrow M_{T/K}$ ias a repeated root and is irreducible (PS4P11) which implies that $p|deg(M_{T/K})$ which implies that $M_{T/K}=X^p-T^p$.
+
+\begin{prop} \label{Prop 1, Feb 17}
+Let $E$ be a field, $G\in \text{Aut}(E)$ a finite subgroup. Put $F=E^G$. Then $E/F$ is a finite Galois extension with group $G$.
+\end{prop}
+\begin{proof}
+\begin{claim}
+Any $a\in E$ is algebraic and separable over $F$, deg$(a/F)\leq |G|$, and $E$ contains all zero's of $M_{a/F}$.
+\end{claim}
+\begin{proof}
+$Q(T)=\Pi_{b\in Ga}(T-b)$. Again, $\sigma Q=Q$ for all $\sigma\in G$, so $Q\in F[T]$. Moreover, $Q(a)=0$. Thus $a$ is algebraic over $F$, deg$(a/F)\leq deg(Q)\leq |G|$. Moreover $M_{a/F}|Q$ and thus has distinct zeros, so $a$ is separable over $F$ and all zero's of $M_{a/F}$ are also zeros of $Q$, hence in $E$.m
+\end{proof}
+\begin{claim}
+Let $E/M/F$ with $M/F$ finite. Then $M/F$ is separable, $[M:F]\leq |G|$, and $E$ contains the normal closure of $M$.
+\end{claim}
+\begin{proof}
+Claim 1 implies that $M/F$ is separable and $E$ contains the normal closure of $M$. By \ref{Prop 5, Feb 13}, $M=F(a)$ for some $a\in M$. Then $[M,F]=deg(a/F)\leq |G| (\text{by claim 1}).$
+\end{proof}
+\begin{claim}
+$E/F$ is finite.
+\end{claim}
+\begin{proof}
+By claim 1, $E/F$ is algebraic. If $[E:F]=\infty$, here is a tower $F\subset M_1\subset M_2\subset\ldots$ of finite extensions contained in $E$ such that $[M_i:F]\longrightarrow\infty$. This contradicts claim 2.
+\end{proof}
+Now $E/F$ is a finite, hence separable and normal by claim 2, hence Galois. From $G\subset Gal(E/F)$ we get $|G|\leq |Ga|(E/F)|=[E:F]\leq |G|$ by claim 2.
+\end{proof}
+\begin{thm} \label{Thm 2, Feb 17}
+Let $E / F$ be a finite Galois extension with $G= \Gal(E/F)$. We let
+$$A=\{E/M/F\ \text{intermediate fields}\}, B=\{H\subset G\ \text{subgroups}\ \}$$ and the maps
+
+$$M\in A\longrightarrow Gal(E/M)\in B, H\in B\longrightarrow E^H\in A$$ are  (i) mutually inverse, inclusion reversing, $G$-equivariant bijections.
+
+(ii) Given $M\iff H$ TFAE.
+(a) $M/F$ is normal,
+(b) $M$ is a $G$ invariant,
+(c) $H\subset G$ is a normal subgroup.
+In that case, the restriction map $G\longrightarrow \text{Gal}(M/F)$ induces an isomorphism $G/H\cong Gal(M/F)$.
+
+(iii) Given $E/M,L/F$, Gal$(E/M/L)=\text{Gal}(E/M)\cap \text{Gal}(E/L)$.
+\end{thm}
+\begin{proof}
+(i) Since $E/F$ is normal and separable so is $E/M$ by \ref{Fact 2, Feb 10} and PS6P2. Thus $E/M$ is Galois. Setting $H=Gal(E/M)$, then $E^H=M$ by \ref{Prop 1, Feb 15}. Conversly, starting $H\subset G$ subgroup, and let $M=E^H$, hence $E/M$ is Galois by \ref{Prop 1, Feb 15} (with Galois group $H$). Moreover $F\subset M,$ since $H\subset G$.
+
+(ii) (b) $\iff$ (c) immediate from equivariance. (a) $\iff$ (b) follows from the fact that $G$ acts transitively on the zeros of $M_{a/F},$ for each $a\in E$ $M$ is normal, have $M$ is the splitting field of some $P$, hence generated over $F$ by its 0's. But $G$ permutes them, so leaves $M$ invariant. If $M$ is $G$-invariant, $a\in M$, then since $G$ permutes the zeros of $M_{a/F}$ transitively, all of them belong to $M$. Now consider $G\longrightarrow \text{Gal}(M/F)$. By definition, its kernel is Gal$(E/M)$. So get injective morphism $G/H\longrightarrow \text{Gal}(M/F)$. Both sides have size $[E:F]/[E:M]=[M:F]$.
+
+(iii) Immediate (supposedly).
+\end{proof}

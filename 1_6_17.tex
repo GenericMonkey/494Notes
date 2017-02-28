@@ -1,5 +1,5 @@
 \section{January 6, 2017} %Pranav
-\begin{fact}
+\begin{fact} \label{Fact 1, Jan 6}
     Let $\varphi: R \rightarrow S$ be a morphism. Then
     $$
     \ker(\varphi) = \{x \in R \mid \varphi(x) = 0\}
@@ -27,7 +27,7 @@
     is an ideal.
 \end{proof}
 \noindent Question: Is every ideal the kernel of morphism?
-\begin{prop}
+\begin{prop} \label{Prop 2, Jan 6}
     Let $R$ be a ring, $I \subset R$ an ideal. Let $R / I$ be the quotient of
     abelian groups and $p: R \rightarrow R / I$ the canonical projection. Then there is a
     unique product map
@@ -70,7 +70,7 @@
 \begin{rmk}
     $\ker(p) = I$
 \end{rmk}
-\begin{thm}\label{thm:homomorphism} \textbf{(Homomorphism Theorem):}
+\begin{thm}\label{Thm 3, Jan 6} \textbf{(Homomorphism Theorem):}
     Let $\phi: R \rightarrow S$ be a morphism of rings, $I \subset \ker(\varphi)$ be
     an ideal of $R$. There is a unique morphism $\overline{\varphi}: R/I \rightarrow S$
     such that $\overline{\varphi} \circ p = \varphi$ i.e.
@@ -114,7 +114,7 @@ commutes. Moreover, $\overline{\varphi}$ is injective $\iff$ $\ker(\varphi) = I$
     \overline{\varphi}(p(a))\overline{\varphi}(p(b)) = \overline{\varphi}(A)\overline{\varphi}(B)
     $$
 \end{proof}
-\begin{defn}
+\begin{defn} \label{Defn 4, Jan 6}
     Let $R$ be a ring.
     \begin{itemize}
         \item Let $a,b \in R$. We say that \textbf{$a$ divides $b$} (denoted $a \mid b$)
@@ -125,7 +125,7 @@ commutes. Moreover, $\overline{\varphi}$ is injective $\iff$ $\ker(\varphi) = I$
         no zero divisors.
     \end{itemize}
 \end{defn}
-\begin{fact}
+\begin{fact} \label{Fact 5, Jan 6}
     $a \mid b \iff (b) \subset (a) \iff b \in (a)$
 \end{fact}
 \begin{proof} (A Pranav Exclusive)
@@ -138,7 +138,7 @@ commutes. Moreover, $\overline{\varphi}$ is injective $\iff$ $\ker(\varphi) = I$
     $b = ar$ for $r \in R$. This is exactly what it means for $a \mid b$! Thus, we have
     shown equality of the above statements.
 \end{proof}
-\begin{fact} (Cancellation Law) If $a \neq 0 \in R$ is not a zero divisor, then
+\begin{fact} \label{Fact 6, Jan 6}(Cancellation Law) If $a \neq 0 \in R$ is not a zero divisor, then
     for $x,y \in R$
     $$
     ax = ay \Rightarrow x = y
@@ -148,7 +148,7 @@ commutes. Moreover, $\overline{\varphi}$ is injective $\iff$ $\ker(\varphi) = I$
     $ax = ay \iff a(x - y) = 0$. $a \neq 0$ implies that $x - y = 0$ as $a$ is not
     a zero divisor.
 \end{proof}
-\begin{defn}
+\begin{defn} \label{Defn 7, Jan 6}
     An ideal $I \subsetneq R$ is called
     \begin{itemize}
         \item \textbf{prime} if $a \cdot b \in I$ implies $a \in I$ or $b \in I$ for all $a,b \in R$.
@@ -172,7 +172,7 @@ commutes. Moreover, $\overline{\varphi}$ is injective $\iff$ $\ker(\varphi) = I$
     that $a \in n\ZZ$ or $b \in n\ZZ$. Next, for $n = 0$. Well, if $ab \in 0\ZZ$, then $ab = 0$. This in $\ZZ$ implies
     that either $a$ or $b$  is $0$ and is also in $n\ZZ$. This completes the reverse direction.
 \end{proof}
-\begin{thm}\label{thm:ideals}
+\begin{thm}\label{Thm 8, Jan 6}
     Let $R$ be a ring.
     \begin{enumerate}[i)]
         \item $R$ is a domain $\iff \{0\}$ is prime.

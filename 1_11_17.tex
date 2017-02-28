@@ -1,5 +1,5 @@
 \section{January 11, 2017}
-\begin{rmk}
+\begin{rmk} \hspace{0.5cm}
 \begin{itemize}
         \item Any field is a domain.
         \item Any subring of a domain is a domain.
@@ -7,7 +7,7 @@
     \end{itemize}
 Is the opposite true?
 \end{rmk}
-\begin{thm}
+\begin{thm} \label{Thm 1, Jan 11}
 Let $R$ be a domain.
 
 1) There exists a pair $(i,K)$ with $K$ a field, $i:R\rightarrow K$ an injective morphism such that if $(j,L)$ is another such pair, there exists a morphism $l:K\rightarrow L$ such that $j=l\circ i,$ which is to say that the following diagram commutes.
@@ -31,7 +31,7 @@ K \arrow{rr}{\phi} && K'
 \begin{rmk}
 
 \begin{itemize}
-	\item $(i,K)$ is an example of a ``universal object"
+	\item $(i,K)$ is an example of a ``universal object''
 	\item $(j,L)$ is called a test object
 	\item $K$ is produced from $R,$ just like the rationals are produced from the integers.
 \end{itemize}
@@ -80,7 +80,7 @@ Symmetric $(n,d)\sim(n',d')\iff nd'=n'd\iff n'd=nd'\iff (n',d')\sim (n,d).$
 Transitive: Assume $(n_1,d_1)\sim(n_2,d_2)\sim(n_3,d_3)$. We want $(n_1,d_1)\sim(n_3,d_3).$
 We have $n_1d_2=n_2d_1,n_2d_3=n_3d_2$ and want $n_1d_3=n_3d_1.$
 We see that $n_1d_3 n_2d_2=n_1d_3n_2d_3=n_2d_1n_3d_2=n_3d_1n_2d_2.$
-Since $R$ is a domain, $n_2d_2$ is not a zero-divisor. If $n_2d_2\ne 0$, then by Fact 6, Jan 6, we get $n_1d_3=n_3d_1$. If $n_2d_2=0$, then ($d_2\ne 0$ and not a 0-divisor) $n_2=0$. For the same reason, $n_1=n_3=0.$ Again, $n_1d_3=n_3d_1$. Either way, we are done.
+Since $R$ is a domain, $n_2d_2$ is not a zero-divisor. If $n_2d_2\ne 0$, then by \ref{Fact 6, Jan 6}, we get $n_1d_3=n_3d_1$. If $n_2d_2=0$, then ($d_2\ne 0$ and not a 0-divisor) $n_2=0$. For the same reason, $n_1=n_3=0.$ Again, $n_1d_3=n_3d_1$. Either way, we are done.
 \end{proof}
 \end{claim}
 
@@ -102,15 +102,15 @@ Homework: $l$ is well defined and a ring morphism.
 
 \end{proof}
 
-\begin{defn}
+\begin{defn}\label{Defn 2, Jan 11}
 
 A pair $(i,K)$ is called a (the) field of fractions (fraction field) of $R$.
 
 \end{defn}
 
-\begin{defn}
+\begin{defn} \label{Defn 3, Jan 11}
 
-1) Let $R$ be a ring. A polynomial in $T$ over $R$ is a formal expression $a_nT^n+a_{n-1}T^{n-1}+\ldots+a_0,a_i\in R.$
+1) Let $R$ be a ring. A \textbf{polynomial in $T$ over $R$} is a formal expression $a_nT^n+a_{n-1}T^{n-1}+\ldots+a_0,a_i\in R.$
 
 2) Given $P(T)=a_nT^n+\ldots+a_0,Q(T)=b_nT^n+\ldots+b_0$ define
 
@@ -125,16 +125,17 @@ $r:(a_nT^n+\ldots+a_0,a_0=r,a_i=0\text{ for } i>0).$ In particular, we have $0,1
 
 4) Let $R[T]$ be the set of al polynomial in $T$ over $R$.
 
-\begin{fact} $(R[T],+,\cdot,0,1)$ is a ring. Moreover $R\rightarrow R[T]$, $r\rightarrow$ constant polynomial $r$ is an injective morphism. The proof is left as an exercise to the reader.
+\begin{fact} \label{Fact 4, Jan 11}
+    $(R[T],+,\cdot,0,1)$ is a ring. Moreover $R\rightarrow R[T]$, $r\rightarrow$ constant polynomial $r$ is an injective morphism. The proof is left as an exercise to the reader.
 \end{fact}
 
 \end{defn}
 
-\begin{defn}
+\begin{defn} \label{Defn 5, Jan 11}
 
 Given $0\ne P\in R[T],$ define deg$(P)=\min\{n|a_m=0\forall m>n\}$, deg$(0)=-\infty$.
 \end{defn}
-\begin{fact}\label{polyringdomain}
+\begin{fact}\label{Fact 6, Jan 11}
 1) deg$(P+Q)\leq\max(\text{deg}(P),\text{deg}(Q))$ with equality if deg$(P)\ne$ deg$(Q)$.
 2) deg$(P\cdot Q)\leq$ deg$(P)+$deg$(Q)$ with equality if the leading coefficient of $P$ (or $Q$) is not a 0 divisor.
 3) In particular, if $R$ is a domain, so is $R[T].$ The proof is left as an exercise to the reader.

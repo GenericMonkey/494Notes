@@ -1,7 +1,7 @@
 \section{January 9, 2017}
-\begin{defn}
-    Let $R$ b a domain. The canonical morphism $\ZZ \rightarrow R$ of Fact \ref{fact:!morph} has
-    a prime ideal as its kernel. By Thm \ref{thm:ideals}, this is of the form
+\begin{defn} \label{Defn 1, Jan 9}
+    Let $R$ b a domain. The canonical morphism $\ZZ \rightarrow R$ of Fact \ref{Fact 7, Jan 4} has
+    a prime ideal as its kernel. By Thm \ref{Thm 8, Jan 6}, this is of the form
     $p\ZZ$ with $p$ prime of $p = 0$. We call $p$ the \textbf{characteristic} of $R$.
 \end{defn}
 \begin{ex}
@@ -16,7 +16,7 @@
 \textbf{(Zorn's Lemma)} (from Artin). An \textbf{inductive} (every totally ordered
 subset has an upper bound) partially ordered set $S$ has at least one maximal element.
 \end{unnumlemma}
-\begin{thm}\label{thm:maxext}
+\begin{thm}\label{Thm 2, Jan 9}
     Let $R$ be a ring. Every proper ideal is contained in a max ideal.
 \end{thm}
 \begin{proof}
@@ -43,7 +43,7 @@ subset has an upper bound) partially ordered set $S$ has at least one maximal el
     upper bound (namely $J_0$). This gives us, by Zorn's Lemma, that $\mathcal{M}$ has
     a maximal element. This maximal element is exactly what we wished to show existed.
 \end{proof}
-\begin{defn}
+\begin{defn} \label{Defn 3, Jan 9}
 Let $R,S$ be rings. Their product is the set $R \times S$ with component-wise
 operations
 \begin{itemize}
@@ -62,10 +62,10 @@ operations
     I \cdot J \subset I \cap J \subset I, J \subset I + J
     $$
 \end{rmk}
-\begin{defn}
+\begin{defn} \label{Defn 4, Jan 9}
     Two ideals $I,J \subset R$ are \textbf{coprime} if $I + J = R$.
 \end{defn}
-\begin{thm}
+\begin{thm} \label{Thm 5, Jan 9}
     \textbf{(Chinese Remainder Theorem)} Let $R$ be a ring, $I_1, \dots I_n \subset R$
     be pairwise coprime ideals. Then the natural morphism
     $$
@@ -84,7 +84,7 @@ operations
     $\ker(p) = \{r \in R \mid 0 = p_1(r), 0 = p_2(r), \dots 0 = p_n(r) \}$. Well, since each $p_i$ by definition has
     kernel exactly $I_i$, this is the same as saying that
     $\ker(p) = \{r \in R \mid r \in I_1 \cap I_2 \cap \dots \cap I_n \}$. \\
-    By the homomorphism theorem (\ref{thm:homomorphism}), we have that $p$ factors through
+    By the homomorphism theorem (\ref{Thm 3, Jan 6}), we have that $p$ factors through
     $R / I_1 \cap I_2 \cap \dots I_n$ and also induces an injective ring morphism
     $\overline{p}: R/ I_1 \cap \dots \cap I_n \rightarrow R/I_1 \times \dots R/I_n$.
     \begin{claim}

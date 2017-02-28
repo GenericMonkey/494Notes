@@ -1,0 +1,93 @@
+\section{February 20, 2017}
+
+\noindent Recall: $E/F$ finite, Galois with group $\Gal(E/F)$.
+\begin{align*}
+	E/M/F &\stackrel{1-1}{\longleftrightarrow} H \leq G \\
+	M & \longmapsto \Gal(E/M) = \{\sigma \in \Gal(E/F) : \sigma|_M = \text{id}_M\} \\
+	E^H &\longmapsfrom H
+\end{align*}
+and: $M/F$ normal $\Leftrightarrow$ $M$ $G$-invariant $\Leftrightarrow$ $H \trianglelefteq G$ $\longrightarrow G/H \stackrel{\text{Res}}{\stackrel{\sim}{\rightarrow}}$ $\Gal(M/F)$.
+
+\begin{prop} \label{Prop 1, Feb 20}
+	Let $L/K$ be an extension, $L/E, F/K$ such that $E/K$, $F/K$ are finite. If $E/K$ is Galois, $EF/F$ is Galois and
+		\[\Gal(EF/F) \stackrel{\text{Res}|_E}{\stackrel{\sim}{\longrightarrow}} \Gal(E/E \cap F).\]
+	is an isomorphism.
+\end{prop}
+
+\begin{proof}
+	By assumption there is $P \in K[T]$ with simple roots s.t. $E$ is the splitting field of $P$. Write $E = K(a_1, ..., a_m)$ for $a_i$ in some algebraic closure of $K$, with $P(a_i) = 0$ for each $i \leq m$. Then if $F = K(b_1, ..., b_{\ell})$, then $EF = \left\{ \sum_{i = 1}^m e_i \cdot f_i : m \in \NN, f_i \in F, e_i \in E  \right\} = F(a_1, ..., a_m)$. Then we can see that $EF$ is the splitting field of $P$ over $F$. In particular, $EF/F$ is Galois.
+
+	Now let $\sigma \in \Gal(EF/F)$; $\sigma$ permutes the zeroes of $P$ and fixes $K$, so it fixes $E$ set-wise. Since (by definition) it fixes $F$ point-wise, the restriction $\sigma \stackrel{\text{Res}|_E}{\longrightarrow} \sigma|_E$ is well-defined (with $\sigma|_E \in \Gal(E/E \cap F)$\footnote{$E/E \cap F$ is Galois by \ref{Fact 2, Feb 10} and Problem 2, Problem Set 6.}). To show that $\text{Res}|_E$ is injective, suppose that $\sigma$ is in the kernel of the restriction map. Then it fixes $E$ and $F$, thus $EF$ as well, so $\sigma$ is the identity. To show it is surjective, take $H \leq \Gal(E/E \cap F)$ be the image of $\text{Res}|_E$. Its fixed field is $E \cap F$, so $\Gal(E/E \cap F)$ and $H$ have the same fixed field. By Galois correspondence (\ref{Thm 2, Feb 17}) they are equal.
+\end{proof}
+
+\begin{prop} \label{Prop 2, Feb 20}
+	(Independence of characters) Let $G$ be a finite group, $K$ be a field, and $\psi_1, ..., \psi_n : G \rightarrow K^{\times}$ be distinct homomorphisms. Then in the $K$-vector space $\text{Maps}(G, K)$ $\psi_1, ..., \psi_n$ are linearly independent.
+\end{prop}
+
+\begin{proof}
+	Suppose they aren't. Then after reordering assume that $\psi_1, ..., \psi_k$ are minimally linearly independent, i.e. any proper subset of them is linearly independent. Then there exist $a_1, ..., a_k \in K$ not all zero so that
+		\[a_1\psi_1(g) + a_2\psi_2(g) + \cdots + a_k\psi_k(g) = 0 \quad \qquad \qquad \qquad \qquad (\ast)\]
+	for all $g \in G$. Choose $z \in G$ s.t. $\psi_1(z) \neq \psi_2(z)$. Then
+		\[a_1\psi_1(zg) + a_2\psi_2(zg) + \cdots + a_k\psi_k(zg) = 0.\]
+	This is
+		\begin{align*}
+			a_1\psi_1(z)\psi_1(g) + a_2\psi_2(z)\psi_1(g) + \cdots + a_k\psi_k(z)\psi_k(g) &= 0 \\
+			a_1\psi_1(g) + a_2\frac{\psi_2(z)}{\psi_1(z)}\psi_2(g) + \cdots + a_k\frac{\psi_k(z)}{\psi_1(z)}\psi_k(g) &= 0. \qquad (\ast \ast)
+		\end{align*}
+	Then taking the difference $(\ast) - (\ast \ast)$ we have a linear relation between $\psi_2, ..., \psi_k$ which is nontrivial since the coefficient in front of $\psi_2$ is $\left( 1 - \frac{\psi_2(z)}{\psi_1(z)} \right) \neq 0$. This contradiction closes the proof.
+\end{proof}
+
+\begin{rmk}
+	The above proof holds if $G$ is a monoid, i.e. does not contain all of its inverses.
+\end{rmk}
+
+\begin{cor} \label{Cor 3, Feb 20}
+	Let $L/K$ be finite. Then elements of $\Aut(L/K)$ are linearly independent in the $K$-vector space $\text{End}_K(L)$.
+\end{cor}
+
+\begin{proof}
+	Apply Proposition 2 (\ref{Prop 2, Feb 20}) to restrictions of $\sigma \in \Aut(L/K)$ to $L^{\times}$, which are group homomorphisms $L^{\times} \rightarrow L^{\times}$.
+\end{proof}
+
+\begin{lemma} \label{Lemma 4, Feb 20}
+	Let $L/K$ be a finite Galois extension with group $G = \{\sigma_1, ..., \sigma_n\}$. Given $e_1, ..., e_n \in L$ the following are equivalent:
+	\begin{enumerate}
+		\item[1)] $e_1, ..., e_n$ is a basis for the $K$-vector space $L$;
+		\item[2)] $\begin{bmatrix} \sigma_1(e_1) & \cdots & \sigma_n(e_1) \end{bmatrix}^{\text{tr}}, ..., \begin{bmatrix} \sigma_1(e_n) & \cdots & \sigma_n(e_n) \end{bmatrix}^{\text{tr}}$ is a basis for the $L$-vector space $L^n$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	Consider the matrix
+		\[A = \begin{bmatrix}
+		\sigma_1(e_1) & \cdots & \sigma_1(e_n) \\
+		\vdots & \ddots & \vdots \\
+		\sigma_n(e_1) & \cdots & \sigma_n(e_n)
+		\end{bmatrix}\]
+	The following are equivalent:
+	\begin{itemize}
+		\item $A$ invertible;
+		\item the columns of $A$ are linearly independent;
+		\item the rows of $A$ are linearly independent.
+	\end{itemize}
+	Then: $1) \Rightarrow 2)$: Consider a linear relation between the rows, $\lambda_1, ..., \lambda_n \in L$ such that
+	\begin{align*}
+		\lambda_1\sigma_1(e_1) + \cdots + \lambda_n\sigma_n(e_1) &= 0 \\
+		\lambda_1\sigma_1(e_2) + \cdots + \lambda_n\sigma_n(e_2) &= 0 \\
+		\vdots &\qquad \qquad
+	\end{align*}
+	Then $\sum \lambda_i\sigma_i \in \text{End}_K(L)$ vanishes on the basis $e_1, ..., e_n$, so $\sum \lambda_i\sigma_i \equiv 0$. Then by Cor. 3 above (\ref{Cor 3, Feb 20}) $\lambda_1 = \cdots = \lambda_n = 0$.
+
+	$2) \Rightarrow 1)$: Take $\lambda_1, ..., \lambda_n \in L$ so that $\sum \lambda_ie_i \equiv 0$. Apply $\sigma_1, ..., \sigma_n$ to this relation to get
+	\begin{align*}
+		\lambda_1\sigma_1(e_1) + \cdots + \lambda_n\sigma_1(e_n) &= 0 \\
+		\lambda_2\sigma_2(e_1) + \cdots + \lambda_n\sigma_2(e_n) &= 0 \\
+		\vdots &\qquad \qquad \\
+		\lambda_1\sigma_n(e_1) + \cdots + \lambda_n\sigma_n(e_n) &= 0.
+	\end{align*}
+	This is
+	\begin{align*}
+		A\begin{bmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{bmatrix} &= \overrightarrow{0} \\
+		\Rightarrow \begin{bmatrix} \lambda_1 \\ \vdots \\ \lambda_n \end{bmatrix} &= A^{-1}\overrightarrow{0} = \overrightarrow{0}.
+	\end{align*}
+\end{proof}
