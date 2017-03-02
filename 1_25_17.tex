@@ -8,7 +8,7 @@ Suppose not. By Thm 2 last time we have that $P$ is not irreducible in $R[T]\Lon
 \end{proof}
 \noindent \textbf{Cyclotomic Polynomials:}
 \begin{defn} \label{Defn 2, Jan 25}
-For $n\in \NN$, the $n$th cyclotomic polynomial is $\Phi_n(T)=\Pi_{gcd(k,n)=1,k=1}^n(T-e^{2\pi ik/n})$.
+For $n\in \NN$, the \textbf{\textit{n}th cyclotomic polynomial} is $\Phi_n(T)=\Pi_{gcd(k,n)=1,k=1}^n(T-e^{2\pi ik/n})$.
 \end{defn}
 \begin{prop} \label{Prop 3, Jan 25}
 $\Phi$ is monic and has integer coefficients.
@@ -22,7 +22,7 @@ $k<n\Longrightarrow k=n:T^n-1=\Pi_{k=1}^n(T-e^{2\pi ik/n})=$
 $\Pi_{d|n}\Phi_d(T)$. By induction, $\Phi_d\in \ZZ[T]$ and monic for $d|n, d\ne n$. In particular, these $\Phi_d$ are primitive, so Gauss lemma (\ref{Lemma 8, Jan 20}) implies that $\Pi_{d|n,d\ne n}\Phi_d=:P$ is primitive. $T^n-1=\Phi_n(T)\cdot P(T)$ in $\CC[T]$. So $P|T^n-1$ in $\CC[T]\Longrightarrow P|T^n-1$ in $\QQ[T]$. By \ref{Lemma 4, Jan 23}, $P|T^n-1$ in $\ZZ[T]$.
 \end{proof}
 \begin{prop} \label{Prop 4, Jan 25}
-If $p\in \NN$ prime, then $\Phi_p$ is irreducible.
+If $p\in \NN$ prime, then $\Phi_p$ is irreducible.\footnote{We see in Galois theory that each $\Phi_n$ is in fact irreducible, but this is harder. See \ref{Prop 3, Feb 24}.}
 \end{prop}
 \begin{proof}
 $T^p-1=\Phi_1\cdot \Phi_p=(T-1)\cdot\Phi_p$ and $T^p-1=(T-1)(T^{p-1}+T^{p-2}+\ldots+1)\Longrightarrow \Phi_p=T^{p-1}+\ldots+1.$ Reduce mod $p$: $(T-1)\bar{\Phi_p}(T)=T^p-1=(T-1)^p$ implies that $\bar{\Phi_p}(T)=(T-1)^{p-1}$. Consider the isomorphism $\ZZ[T]\longrightarrow \ZZ[T]$ defined by $T\longrightarrow T+1$. Let $Q$ be image of $\Phi_p$. Then $\Phi_p$ irreducible if and only if $Q$ is irreducible. But $\bar{Q}(T)=\bar{\Phi}_p(T+1)=T^{p-1}$. Thus if $Q(T)=a_{p-1}T^{p-1}+\ldots+a_0$, $p$ does not divide $a_{p-1},p|a_{p-2},\ldots,a_0$. But $a_0=Q(0)=\Phi_p(1)=p$. Apply Eisenstein (\ref{Prop 1, Jan 25}).
@@ -35,9 +35,9 @@ Set $P\in R[T], P(T)=a_nT^n+\ldots+a_0, S=R[T]/(P),$ $s=$ image of $T$ in $S$. N
 \begin{defn}\label{Defn 5, Jan 25}
 Let $R$ be ring.
 
-(i) An $R$-algebra is a pair $(S,\phi), S$ ring, $\phi:R\longrightarrow S$ morphism (rmk: $\phi$ usually suppressed, $\phi(r)s=``rs"$).
+(i) An \textbf{\textit{R}-algebra} is a pair $(S,\phi), S$ ring, $\phi:R\longrightarrow S$ morphism ($\phi$ usually suppressed, so $\phi(r)s=``rs"$).
 
-(ii) A morphism of $R$-alg $(S,\phi)\longrightarrow (T,\psi)$ is a ring morphism $f:S\longrightarrow T$ such that $f(\phi(r)s)=f(rs)=rf(s)=\psi(r)f(s)$.
+(ii) A \textbf{morphism of \textit{R}-algebras} $(S,\phi)\longrightarrow (T,\psi)$ is a ring morphism $f:S\longrightarrow T$ such that $f(\phi(r)s)=f(rs)=rf(s)=\psi(r)f(s)$.
 \end{defn}
 \begin{rmk}
 $\psi$ need not be injective.

@@ -3,14 +3,14 @@
 \begin{defn} \label{Defn 1, Jan 27}
 \hspace{0.5cm}
 \begin{enumerate}
-\item[(i)] A \textit{morphism of fields} is a morphism of rings whose source and target are fields
-\item[(ii)] A \textit{subfield} is a subring of a field that is a field
-\item[(iii)] An \textit{extension} of a field $k$ is a field $L$ containing $k$, denoted $L/k$.
+\item[(i)] A \textbf{morphism of fields} is a morphism of rings whose source and target are fields
+\item[(ii)] A \textbf{subfield} is a subring of a field that is a field
+\item[(iii)] An \textbf{extension} of a field $k$ is a field $L$ containing $k$, denoted $L/k$.
 \end{enumerate}
 \end{defn}
 
 \begin{rmk}
-If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vector space. An extension $L/k$ is called \textit{finite} if $\dim_k(L) < \infty$. In this case define the \textit{degree} of $L/k$, denoted $[L : k] \stackrel{\text{def}}{=} \dim_k(L)$.\footnote{Debacker noted that the use of this notation, identical to the index of a subgroup, is because field extensions are in fact group-theoretic. When Galois groups are added to the notes, this will be discussed below.}
+If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vector space. An extension $L/k$ is called \textit{finite} if $\dim_k(L) < \infty$. In this case define the \textit{degree} of $L/k$, denoted $[L : k] \stackrel{\text{def}}{=} \dim_k(L)$.\footnote{The same notation used for the indexes of subgroups is used here since field extensions in Galois theory correspond to subgroups of the Galois group of the extension (provided that it is Galois). See below, namely Feb. 13 and on.}
  \end{rmk}
 
 \begin{fact} \label{Fact 2, Jan 27}
@@ -20,9 +20,9 @@ If $L/k$ is an extension, then $L$ is a $k$-algebra, and in particular a $k$-vec
 \begin{defn} \label{Defn 3, Jan 27}
 \hspace{0.5cm}
 \begin{enumerate}
-\item[(i)] Every field has a smallest field, called the \textit{prime subfield}, equal to $\bigcap_{k \subset L} k^{\text{field}}$, the intersection of all subfields of $L$. \\
+\item[(i)] Every field has a smallest field, called the \textbf{prime subfield}, equal to $\bigcap_{k \subset L} k^{\text{field}}$, the intersection of all subfields of $L$. \\
 \textit{Example:} The prime subfield of $\RR$ is $\QQ$. To see this, observe: any subfield of $\RR$ must contain 1 and 0, thus sums of the form $1 + \cdots + 1$, so it must contain $\NN$. Throwing in additive and then multiplicative inverses gives $\QQ$.
-\item[(ii)] Given an extension $L/k$ and any subset $S \subset L$, let $k(S)$ be the smallest subfield of $L$ containing $k$ and $S$.
+\item[(ii)] Given an extension $L/k$ and any subset $S \subset L$, then $k(S)$ is the smallest subfield of $L$ containing $k$ and $S$.
 \end{enumerate}
 \end{defn}
 
@@ -61,13 +61,13 @@ If $M/L/k$ is a tower of finite extensions, then $[M : k] = [M : L] \cdot [L : k
 \end{cor}
 
 \begin{defn} \label{Defn 9, Jan 27}
-Let $L/k$ be an extension, and $a \in L$. If there is $0 \neq p \in k[T]$ such that $p(a) = 0$, then $a$ is \textit{algebraic over $k$}. Otherwise, $a$ is \textit{transcendental over $k$}.
+Let $L/k$ be an extension, and $a \in L$. If there is $0 \neq p \in k[T]$ such that $p(a) = 0$, then $a$ is \textbf{algebraic over \textit{k}}. Otherwise, $a$ is \textbf{transcendental over \textit{k}}.
 \end{defn}
 
 As per the above definitions, we would like to study the following construction: let $\text{ev} \colon k[T] \rightarrow L$, $p \mapsto p(a)$ be the evaluation morphism. If $a$ is transcendental, ev is injective. Further, since $L$ is a field, we have that ev factors uniquely through the fraction field $k(T)$\footnote{This notation was established on homework: $k(T)$ is the set of rational functions with coefficients in $k$.} and induces an isomorphism $k(T) \stackrel{\sim}{\rightarrow} k(a)$. If $a$ is algebraic, let $0 \neq I \subset k[T]$ be the kernel of ev. Since $k[T]$ is a Euclidean domain, hence a PID (see a proposition from Jan. 20), so there exists a unique monic polynomial $p \in k[T]$ such that $(p) = I$.
 
 \begin{defn} \label{Defn 10, Jan 27}
-$p$ is called the \textit{minimal polynomial} of $a$ over $k$, $a/k$, written $M_{a/k}$. $deg(a/k) := \deg(M_{a/k})$ is its \textit{degree}.
+$p$ is called the \textbf{minimal polynomial} of $a$ over $k$, $a/k$, written $M_{a/k}$. $\deg(a/k) := \deg(M_{a/k})$ is its \textbf{degree}.
 \end{defn}
 
 \begin{rmk}

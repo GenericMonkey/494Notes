@@ -61,16 +61,16 @@ Gitlin's thoughts:  The constructed isomorphism can be thought of as the map $R[
 \end{proof}
 
 \begin{prop} \label{Prop 4, Jan 13}
-Let $P,D \in R[T]$.  Assume that $D \neq 0$ and that the leading coefficient of $D$ is a unit.  There exist unique $Q,Z \in R[T]$ with $deg(Z) < deg(D)$ such that $P = QD+Z$.
+Let $P,D \in R[T]$.  Assume that $D \neq 0$ and that the leading coefficient of $D$ is a unit.  There exist unique $Q,Z \in R[T]$ with $\deg(Z) < \deg(D)$ such that $P = QD+Z$.
 \end{prop}
 
 \begin{proof}\hspace{0.5cm}
 
-Choose $Q$ so that $deg(Z)$ is minimal where $Z = P-QD$.  We claim $deg(Z) < deg(D)$.  Suppose not.  Let $D = d_nT^n + ... + d_0$ and $Z = z_mT^m + ... + z_0$ with $m \geq n$.  Note that $P-(Q+z_md_n^{-1}T^{m-n})D = Z - (z_md_n^{-1}T^{m-n})D$ has degree less than $deg(Z)$, contradicting the minimality of $Z$.  This shows existence.
+Choose $Q$ so that $\deg(Z)$ is minimal where $Z = P-QD$.  We claim $\deg(Z) < \deg(D)$.  Suppose not.  Let $D = d_nT^n + ... + d_0$ and $Z = z_mT^m + ... + z_0$ with $m \geq n$.  Note that $P-(Q+z_md_n^{-1}T^{m-n})D = Z - (z_md_n^{-1}T^{m-n})D$ has degree less than $\deg(Z)$, contradicting the minimality of $Z$.  This shows existence.
 
 Gitlin's thoughts:  The set of ``candidates'' is the set of elements of $R[T]$ that have the form $P-*D$ where $*$ varies over $R[T]$.  Clearly $P-(Q+z_md_n^{-1}T^{m-n})D$ is a candidate.  Furthermore, the leading term $z_mT^m$ of $Z$ cancels with the leading term $z_md_n^{-1}T^{m-n} \cdot d_nT^n = z_mT^m$ of $(z_md_n^{-1}T^{m-n})D$ in the subtraction $Z - (z_md_n^{-1}T^{m-n})D$ so the degree of $Z$ is at least one more than the degree of $Z - (z_md_n^{-1}T^{m-n})D$.
 
-Let $Q',Z'$ be another such pair.  We have $QD+Z = P = Q'D+Z'$ so $(Q-Q')D = Z'-Z$.  Thus by (\ref{Fact 6, Jan 11}) $deg(D) > \max(deg(Z'),deg(Z)) \geq deg(Z'-Z) = deg((Q-Q')D) = deg(Q-Q') + deg(D)$ (the leading coefficient of $D$ is a unit and thus not a divisor of zero).  This means $deg(Q-Q') = - \infty$ so $Q-Q' = 0$ so $Q= Q'$.  Thus $Z = P-QD = P-Q'D = Z'$.  This shows uniqueness.
+Let $Q',Z'$ be another such pair.  We have $QD+Z = P = Q'D+Z'$ so $(Q-Q')D = Z'-Z$.  Thus by (\ref{Fact 6, Jan 11}) $\deg(D) > \max(\deg(Z'),\deg(Z)) \geq \deg(Z'-Z) = \deg((Q-Q')D) = \deg(Q-Q') + \deg(D)$ (the leading coefficient of $D$ is a unit and thus not a divisor of zero).  This means $\deg(Q-Q') = - \infty$ so $Q-Q' = 0$ so $Q= Q'$.  Thus $Z = P-QD = P-Q'D = Z'$.  This shows uniqueness.
 
 Gitlin's thoughts:  My uniqueness proof likely differs from the one given in class.  Sorry Tasho.  I couldn't follow your inequalities.
 
