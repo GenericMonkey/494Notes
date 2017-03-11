@@ -1,0 +1,114 @@
+\section{March 6, 2017}
+Let $E/F$ be a finite separable extension and $\overline{F}$ be an algebraic closure of $F$.
+
+\begin{defn}
+	Given $a \in E$, define
+		\begin{itemize}
+			\item $N_{E/F}(a) = \prod_{\sigma \in \mor_F(E, \overline{F})} \sigma(a)$ 
+			\item $T_{E/F}(a) = \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(a)$.
+		\end{itemize}
+\end{defn}
+
+\begin{fact}
+	~\\
+	i) $N_{E/F}: E^{\times} \rightarrow F^{\times}$ is a group homomorphism. \\
+	ii) $T_{E/F}: E \rightarrow F$ is a linear form on $E$ as an $F$-vector space. \\
+	iii) For a tower $L/E/F$ we have 
+		\[N_{L/F} = N_{E/F} \circ N_{L/E} \qquad T_{L/F} = T_{E/F} \circ T_{L/F}.\]
+\end{fact}
+
+\begin{proof}
+	We begin by noting that each map is well-defined, i.e. maps into $F$ (as opposed to $\overline{F}$); you should have proved this on Problem Set 7. \\
+	i) To show that the norm maps as intended, take $e \in E^{\times}$; let $e^{-1} \in E$ be its inverse. Then 
+		\[N_{E/F}(e) = \prod_{\sigma_F(E, \overline{F})} \sigma(e).\]
+	As was the case on Problem 7, this appears as the constant term of a polynomial in $F[x]$, so it is an element of $F$. In particular, since $e \neq 0$, we have $\sigma(e) \neq 0$ for each morphism $\sigma$. Thus $F \ni N_{E/F} \neq 0$, so $N_{E/F} \in F^{\times}$.
+	
+	To show this is a group homomorphism, take $e, f \in E^{\times}$. Then
+		\begin{align*}
+			N_{E/F}(ef) &= \prod_{\sigma \in \mor_F(E, \overline{F})} \sigma(ef) \\
+			&= \prod_{\sigma \in \mor_F(E, \overline{F})} \sigma(e)\sigma(f) \\
+			&= \left( \prod_{\sigma \in \mor_F(E, \overline{F})} \sigma(e) \right) \cdot \left( \prod_{\sigma \in \mor_F(E, \overline{F})} \sigma(f) \right) \\
+			&= N_{E/F}(e) \cdot N_{E/F}(f)
+		\end{align*}
+	as desired.
+	
+	ii) Let $g \in F$ and $e_1, e_2 \in E$. Then
+		\begin{align*}
+			g \cdot T_{E/F}(e_1 + e_2) &= g \cdot \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(e_1 + e_2) \\
+			&= g \cdot \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(e_1) + \sigma(e_2) \\
+			&= g \cdot \left( \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(e_1) + \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(e_2) \right) \\
+			&= g \cdot \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(e_1) + g \cdot \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(e_2) \\
+			&= T_{E/F}(g \cdot e_1) + T_{E/F}(g \cdot e_2)
+		\end{align*}
+		as desired.
+		
+		iii) See Problem Set 7 (namely the solutions).
+\end{proof}
+
+\begin{fact}
+	~\\
+	i) $T_{E/F} \neq 0$; \\
+	ii) The bilinear form $E \times E \rightarrow F$ defined by $(x, y) \mapsto T_{E/F}(xy)$ is nondegenerate.
+\end{fact}
+
+\begin{proof}
+	~\\
+	i) This follows from independence of characters (\ref{Cor 3, Feb 20}).
+	
+	\noindent ii) If for $y \in E$, $T_{E/F}(yx) = 0$ for every $x \in E$ then for any $z \in E$ $T_{E/F}(z) = 0$, since $z = y(y^{-1}z)$. This contradicts the above.
+\end{proof}
+
+\begin{cor}
+	For any basis $e_1, ..., e_n$ of the $F$-vector space $E$ there exists another basis $f_1, ..., f_n$ of $E$ over $F$ such that $T_{E/F}(e_if_j) = \delta_{i,j}$.
+\end{cor}
+
+\begin{prop}
+	Let $a \in E$ be primitive and $f = M_{a/F}$. Write $n = \deg(f)$ and $E[T] \ni \frac{f(T)}{T - a} = b_{n-1}T^{n-1} + \cdots + b_0$. If $e_1, ..., e_n = 1, a, a^2, ..., a^{n-1}$ then (as above) $f_1, ..., f_n = \frac{b_0}{f'(a)}, ..., \frac{b_{n-1}}{f'(a)}$.
+\end{prop}
+
+\begin{proof}
+	Write $\mor_F(E, \overline{F}) = \{\sigma_1 = 1, \sigma_2, ..., \sigma_n\}$ and $a_1 := \sigma_i(a)$. Then by \ref{Prop 1, Feb 15}, $\{a_i\}_{i=1}^n$ is the root set of $M_{a/F}$. \\
+	\noindent \underline{Claim:} For every $0 \leq r \leq n-1$,
+		\[T^r = \sum_{i=1}^n \frac{f(T)}{T - a_i} \cdot \frac{a_i^r}{f'(a_i)}.\]
+	\noindent \underline{\textit{Proof (of Claim).}} We will show that for any such $r$, the difference of the left- and right-hand sides is a polynomial of degree $\leq n-1$ with $a_1, ..., a_n$ as roots. Then by \ref{Cor 1, Jan. 18}, it is zero. 
+	
+	Note that $f(T) = \prod_i (T - a_i)$. Then $f'(T) = \sum_i \prod_{j \neq i} (T - a_i)$. So 
+		\begin{align*}
+			f'(a_i) &= \prod_{j \neq i} (a_i - a_j) \\
+			\Rightarrow \sum_{i = 1}^n ``\frac{f(a_j)}{a_j - a_j}" \cdot \frac{a_i^r}{f'(a_i)} &= \begin{cases} 0 & i \neq j \\ a_i^r = a_j^r & i = j \end{cases} \\
+			\Rightarrow \sum_{i = 1}^n ``\frac{f(a_j)}{a_j - a_j}" \cdot \frac{a_i^r}{f'(a_i)} - a_j^r = 0
+		\end{align*}
+	closing the proof of the claim. $\square$
+	
+	Now write $g_r(T) = \frac{f(T)}{(T - a)} \cdot \frac{a^r}{f'(a)}$. By the claim, 
+		\[T^r = \sum_{\sigma \in \mor_F(E, \overline{F})} \sigma(g_r(T)) = \sum_{\sigma} \sigma(b_{n-1})T^{n-1} + \cdots + \sigma(b_0) \cdot \frac{\sigma(a)^r}{\sigma(f'(a))}.\]
+	Comparing coefficients, we have
+		\begin{align*}
+			\delta_{i,s} &= \sum_{\sigma} \sigma(b_s) \cdot \frac{\sigma(a)^r}{\sigma(f'(a))} \\
+			&= \sum_{\sigma} \sigma \left( \frac{b_s}{f'(a)} a^r \right) \\
+			&= T_{E/F} \left( \frac{b_s}{f'(a)} a^r \right)
+		\end{align*}
+	which closes the proof.\\
+\end{proof}
+
+\begin{prop}
+	~\\
+	i) Let $a \in E$ be any element and consider the $F$-linear map $m_a: E \rightarrow E$ that maps $x \mapsto ax$. The distinct eigenvalues of $m_a$ are precisely $\{\sigma(a) : \sigma \in \mor_F(E, \overline{F})\}$ and each root occurs with multiplicity $[E : F(a)]$.
+	
+	\noindent ii) $\det(m_a) = N_{E/F}(a)$ and $\tr(m_a) = T_{E/F}(a)$.
+\end{prop}
+
+\begin{proof}
+	i) By definition, the minimal polynomial of $a$ over $F$ is the minimal polynomial of $m_a \in \text{End}_F(E)$. Thus the eigenvalues of $m_a$ are precisely the zeroes of $M_{a/F}$, i.e. $\{\sigma(a)\}$ (see \ref{Prop 1, Feb 15}). Let $w_1, ..., w_n$ be a basis for the $F(a)$-vector space $E$; we have an isomorphism of $F(a)$-vector spaces $F(a)^n \rightarrow E$ defined by $(c_1, ..., c_n) \mapsto c_1w_1 + \cdots + c_nw_n$. This is an $m_a$-invariant isomorphism of $F$-vector spaces. If $\chi_a$ is the characteristic polynomial of $m_a \in \text{End}_F(F(a))$ then $\chi_a^n$ is the characteristic polynomial of $m_a \in \text{End}_F(E)$. On the other hand, $M_{a/F} \mid \chi_a$, with 
+		\[\deg(\chi_a) = \dim_F(F(a)) = \deg(a/F) = \deg(M_a/F)\]
+	so $M_{a/F} = \chi_a$. Hence $M_{a/F}^{[E : F(a)]}$ is the characteristic polynomial of $m_a \in \text{End}_F(E)$.
+	
+	ii) By i), 
+		\begin{align*}
+			\det(m_a/E) &= \det(m_a/F(a))^{[E : F(a)]} \\
+			&= \left( \prod_{\sigma \in \mor_F(F(a), \overline{F})} \sigma(a) \right)^{[E : F(a)]} \\
+			&= (N_{F(a)/F}(a))^{[E : F(a)]} \\
+			&= N_{E/F}(a)
+		\end{align*}
+	by Fact 2 above. The proof for trace is essentially identical, as you can check.
+\end{proof}
